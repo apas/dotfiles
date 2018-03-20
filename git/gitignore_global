@@ -1,6 +1,9 @@
 # Mac
 .DS_Store
 
+# Vim swap files
+.*.*.swp
+
 # WebStorm
 .idea/
 
