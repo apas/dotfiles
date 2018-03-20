@@ -1,0 +1,28 @@
+#!/bin/bash
+filename=${1}
+output=${filename%.md}
+
+hincl="\usepackage{graphicx}
+\usepackage{multicol}
+\setlength{\columnsep}{0.25in}
+\usepackage{geometry}
+\geometry{letterpaper,textwidth=7.3in,hmarginratio=1:1,textheight=9in,
+vmarginratio=1:1,heightrounded,tmargin=2cm,bmargin=2cm}
+\newcommand{\hideFromPandoc}[1]{#1}
+\hideFromPandoc{\let\Begin\begin \let\End\end}
+"
+
+pandoc ${filename} --latex-engine=/Library/TeX/texbin/pdflatex \
+  --template=/Users/apas/.pandoc/templates/default.latex \
+  -F pandoc-crossref \
+  -F pandoc-citeproc \
+  -f markdown+raw_tex+yaml_metadata_block \
+  --variable urlcolor=blue \
+  -Mreference-section-title=References \
+  -Mlink-citations=true \
+  -Mdocumentclass=article \
+  -Mheader-includes="$hincl" \
+  -Minclude-before='\Begin{multicols}{2}' \
+  -Minclude-after='\End{multicols}' \
+  -t latex -s --highlight-style pygments -o ${output}.pdf
+open -a Preview ${output}.pdf

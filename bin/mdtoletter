@@ -1,0 +1,9 @@
+#!/bin/bash
+filename=${1}
+output=${filename%.md}
+pandoc ${filename} --template=/Users/apas/.pandoc/templates/letter.latex \
+  --latex-engine=/Library/TeX/texbin/pdflatex \
+  -f markdown+raw_tex+yaml_metadata_block \
+  --variable urlcolor=blue \
+  -t latex --highlight-style pygments -o ${output}.pdf
+open -a Preview ${output}.pdf

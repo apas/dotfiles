@@ -1,0 +1,28 @@
+[user]
+  name = apas
+  email = apostolos.me@gmail.com
+
+[credential]
+  helper = osxkeychain
+
+[filter "media"]
+  required = true
+  clean = git media clean %f
+  smudge = git media smudge %f
+
+[filter "lfs"]
+  clean = git-lfs clean %f
+  smudge = git-lfs smudge %f
+  required = true
+
+[color]
+  ui = true
+  diff = auto
+  status = auto
+  branch = auto
+
+[github]
+  user = apas
+
+[core]
+	excludesfile = $HOME/.gitignore_global
