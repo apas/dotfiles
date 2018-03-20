@@ -33,8 +33,6 @@ export GREP_OPTIONS='--color=auto' GREP_COLOR='1;32'
 
 # point to and source z in order to track and build dir list
 # assumes z installed via brew and current ver is 1.9
-. /usr/local/Cellar/z/1.9/etc/profile.d/z.sh
-
 if [[ "$(uname -s)" == "Darwin" ]]; then
     . /usr/local/Cellar/z/1.9/etc/profile.d/z.sh
 elif [[ "$(uname -s)" == "Linux" ]]; then
