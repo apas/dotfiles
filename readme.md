@@ -1,5 +1,5 @@
 Opinionated functional minimalism.
 
 ``` {.bash}
-$ ./pilgrim.sh
+$ ./pilgrim.sh path/to/install
 ```
