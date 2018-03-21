@@ -2,14 +2,14 @@ source $HOME/.gap/prompt.sh
 m="\e[0;32m\][ulysses]\[\e[0;32m\]"
 export PS1="$m \[\e[0;34m\]\w\[\e[0;36m\]\$gitb\[\e[0;31m\]\$gitd\[\e[0m\] "
 
+if [[ "$(uname -s)" == "Linux" ]]; then
+    export PATH=$HOME/.remote:$PATH
+fi
+
 # /usr/local/texlive/2017basic/bin/x86_64-darwin
 export PATH=$PATH:$HOME/.go/bin:$HOME/.cargo/bin
 export GOPATH=$HOME/.go
 export EDITOR='vim'
-
-if [[ "$(uname -s)" == "Linux" ]]; then
-    export PATH=$PATH:$HOME/.remote
-fi
 
 shopt -s cmdhist
 shopt -s cdspell
