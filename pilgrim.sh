@@ -1,13 +1,14 @@
 #!/bin/bash
 
 dest=${1}
-cwp=`pwd`
-source=${cwp}
+host=${2}
+source=`pwd`
 
 echo "Install .dotfiles"
 echo " "
 echo -e "Source directory:\t"${source}
 echo -e "Destination directory:\t"${dest}
+echo -e "Hostname:\t"${host}
 
 dotfiles() {
     ln -sf ${source}/bash_profile ${dest}/.bash_profile
@@ -36,6 +37,9 @@ directories() {
     if [[ "$(uname -s)" == "Linux" ]]; then
         ln -sfn ${source}/remote ${dest}/.remote
     fi
+
+    sed -i.bak s/ulysses/${host}/ ${source}/shell/utils.sh
+    rm ${source}/shell/*.bak
 }
 
 
