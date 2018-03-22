@@ -1,8 +1,9 @@
 # Mac
 .DS_Store
 
-# Vim swap files
+# Vim swap files and undodir
 .*.*.swp
+vim/undodir/
 
 # WebStorm
 .idea/
