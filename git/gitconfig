@@ -23,6 +23,3 @@
 
 [github]
   user = apas
-
-[core]
-	excludesfile = $HOME/.gitignore_global

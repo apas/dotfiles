@@ -30,6 +30,8 @@ dotfiles() {
     ln -sf ${source}/git/gitignore_global ${dest}/.gitignore_global
     ln -sf ${source}/vimrc ${dest}/.vimrc
 
+    git config --global core.excludesfile ${dest}/.gitignore_global
+
     if [[ "$(uname -s)" == "Darwin" ]]; then
         ln -sf ${source}/hushlogin ${dest}/.hushlogin
         ln -sf ${source}/boom/boom ${dest}/.boom
