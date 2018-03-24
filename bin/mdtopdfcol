@@ -24,5 +24,6 @@ pandoc ${filename} --latex-engine=/Library/TeX/texbin/pdflatex \
   -Mheader-includes="$hincl" \
   -Minclude-before='\Begin{multicols}{2}' \
   -Minclude-after='\End{multicols}' \
+  -M date="`date "+%B %e, %Y"`" \
   -t latex -s --highlight-style pygments -o ${output}.pdf
 open -a Preview ${output}.pdf

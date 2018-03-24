@@ -7,5 +7,6 @@ pandoc ${filename} --slide-level 2 -t beamer --latex-engine=xelatex \
   -F pandoc-citeproc \
   -f markdown+raw_tex+yaml_metadata_block \
   -Mlink-citations=true \
+  -M date="`date "+%B %e, %Y"`" \
   -o ${output}.pdf
 open -a Preview ${output}.pdf
