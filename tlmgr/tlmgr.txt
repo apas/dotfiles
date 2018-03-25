@@ -26,6 +26,7 @@ babel-swedish
 babelbib
 bbcard
 beamer
+beamertheme-metropolis
 bera
 bibtex
 bibtex.x86_64-darwin
@@ -223,6 +224,7 @@ pdfpages
 pdftex
 pdftex.x86_64-darwin
 pgf
+pgfopts
 philokalia
 piechartmp
 placeins
