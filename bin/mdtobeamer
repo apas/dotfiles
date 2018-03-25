@@ -1,6 +1,9 @@
 #!/bin/bash
 filename=${1}
 output=${filename%.md}
+
+hincl="\metroset{progressbar=foot,block=fill}"
+
 pandoc ${filename} --slide-level 2 -t beamer --latex-engine=xelatex \
   -V theme:metropolis \
   -F pandoc-crossref \
@@ -8,5 +11,6 @@ pandoc ${filename} --slide-level 2 -t beamer --latex-engine=xelatex \
   -f markdown+raw_tex+yaml_metadata_block \
   -Mlink-citations=true \
   -M date="`date "+%B %e, %Y"`" \
+  -Mheader-includes="$hincl" \
   -o ${output}.pdf
 open -a Preview ${output}.pdf
