@@ -8,6 +8,7 @@ set autoread                    " Reload files changed outside vim
 set nocompatible                " Use vim rather than vi settings
 set backspace=indent,eol,start  " Allow backspace in insert mode
 set number                      " Line numbers are good
+set ttyfast                     " Faster term redrawing, scrolling; perhaps
 set nobackup                    " Disable file backups when writing files
 set nowritebackup               " Don't backup before overwriting files
 set expandtab                   " Use the appropriate number of spaces to tab
