@@ -14,7 +14,7 @@ if [[ "$(uname -s)" == "Linux" ]]; then
 fi
 
 # /usr/local/texlive/2017basic/bin/x86_64-darwin
-export PATH=$PATH:$HOME/.go/bin:$HOME/.cargo/bin
+export PATH=$HOME/.bin:$PATH:$HOME/.go/bin:$HOME/.cargo/bin
 export GOPATH=$HOME/.go
 export EDITOR='vim'
 
