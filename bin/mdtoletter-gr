@@ -6,5 +6,6 @@ pandoc ${filename} --template=/Users/apas/.pandoc/templates/letter.latex \
   -H /Users/apas/.pandoc/templates/fonts.tex \
   -f markdown+raw_tex+yaml_metadata_block \
   --variable urlcolor=blue \
+  -M date="`date "+%B %e, %Y"`" \
   -t latex --highlight-style pygments -o ${output}.pdf
 open -a Preview ${output}.pdf
