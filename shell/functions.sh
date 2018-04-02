@@ -68,6 +68,15 @@ loc() {
     xargs wc -l
 }
 
+batt() {
+    remaining=`pmset -g batt | awk 'FNR==2 {print $5}'`
+    pct=`ioreg -c AppleSmartBattery -r | \
+        awk '$1~/Capacity/{c[$1]=$3} END{OFMT="%.2f%"; max=c["\"MaxCapacity\""];
+        if (max>0) { print 100*c["\"CurrentCapacity\""]/max;} }'`
+
+    echo "Remaining: ${remaining} hrs, ${pct}%"
+}
+
 move-here() {
   numberOfFiles=${1}
 
