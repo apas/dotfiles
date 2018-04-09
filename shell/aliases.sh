@@ -47,6 +47,7 @@ alias traceroute='grc -es --colour=auto traceroute'
 alias monitor_dns="sudo tcpdump -i en0 -s 5000 -n port 53"
 alias status="echo -n 'Branch: ' \
     && git rev-parse --abbrev-ref HEAD && git status -s"
+alias mlb="open -a Safari 'https://encrypted.google.com/search?hl=en&q=mlb'"
 
 alias ip='curl ifconfig.co'
 alias netcons='lsof -i'
