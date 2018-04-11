@@ -36,6 +36,11 @@ alias partners="ssh partners"
 alias clio="ssh clio"
 alias afovia="ssh afovia"
 
+if [[ "$(uname -s)" == "Linux" ]]; then
+    alias grep="grep --color=auto"
+    alias ls="ls --color=auto"
+fi
+
 alias ppath="echo $PATH | tr ':' '\n'"
 alias hogs="ps wwaxr -o pid,stat,%cpu,time,name,comm | head -10"
 alias gist='gist -R -Ppc -f ${1}'
