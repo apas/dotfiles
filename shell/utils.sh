@@ -1,4 +1,4 @@
-source $HOME/.gap/prompt.sh
+source $HOME/.shell/prompt.sh
 
 red="$(tput setaf 1 2>/dev/null || echo '\e[0;31m')"
 grn="$(tput setaf 2 2>/dev/null || echo '\e[0;32m')"

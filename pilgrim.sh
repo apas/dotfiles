@@ -42,7 +42,6 @@ directories() {
     echo "== Directories"
 
     ln -sfn ${source}/bin ${dest}/.bin
-    ln -sfn ${source}/gap ${dest}/.gap
     ln -sfn ${source}/pip ${dest}/.pip
     ln -sfn ${source}/shell ${dest}/.shell
     ln -sfn ${source}/vim ${dest}/.vim
