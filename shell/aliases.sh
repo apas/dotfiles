@@ -11,7 +11,6 @@ alias slack="node $HOME/git/terminal-slack/main.js"
 alias gifs="boom gifs"
 
 alias archey='archey -c'
-alias dirsize='du -sh ${1}'
 alias server="python -m SimpleHTTPServer"
 alias branch="git rev-parse --abbrev-ref HEAD"
 alias shots="finder $HOME/Dropbox/Screenshots"

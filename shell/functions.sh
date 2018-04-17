@@ -16,6 +16,22 @@ edit() {
   fi
 }
 
+ds() {
+    if [[ $# -eq 1 ]]; then
+        du -ah ${1}
+    elif [[ $# -eq 2 ]]; then
+        if [[ ${1} == "-s" ]]; then
+            du -sh ${2%/}
+        else
+            echo "directory size: missing parameter or wrong syntax."
+            echo "ds [-s] path/to/directory"
+        fi
+    else
+        echo "directory size: missing parameter or wrong syntax."
+        echo "ds [-s] path/to/directory"
+    fi
+}
+
 encrypt() {
     file=$1
 
