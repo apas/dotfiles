@@ -4,6 +4,7 @@
 # Vim swap files and undodir
 .*.*.swp
 vim/undodir/
+vim/bundle/
 
 # WebStorm
 .idea/

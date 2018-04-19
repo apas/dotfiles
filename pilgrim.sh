@@ -58,6 +58,25 @@ directories() {
     rm ${source}/shell/*.bak
 }
 
+vim_plugins() {
+    echo "== Vim plugins"
+
+    declare -a plugins=("https://github.com/vim-scripts/delimitMate.vim.git" \
+        "https://github.com/itchyny/lightline.vim.git" \
+        "https://github.com/tomtom/tcomment_vim.git" \
+        "https://github.com/qpkorr/vim-bufkill.git" \
+        "https://github.com/altercation/vim-colors-solarized.git" \
+        "https://github.com/itchyny/vim-gitbranch.git" \
+        "https://github.com/airblade/vim-gitgutter.git" \
+        "https://github.com/kshenoy/vim-signature.git" \
+        "https://github.com/tpope/vim-unimpaired.git")
+
+    mkdir ${source}/vim/bundle
+    for plugin in "${plugins[@]}"; do
+        git -C ${source}/vim/bundle clone ${plugin};
+    done
+}
+
 if [[ ! $# -eq 2 ]]; then
     echo "Pilgrim requires two parameters: destination path and hostname."
     echo "Please try again."
@@ -78,6 +97,7 @@ if [[ ${answer} == "yes" || ${answer} == "y" ]]; then
     dotfiles
     directories
     install_brew
+    vim_plugins
 else
     echo "Exiting."
     exit 0
