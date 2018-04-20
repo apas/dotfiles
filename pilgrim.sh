@@ -21,6 +21,14 @@ install_brew() {
     fi
 }
 
+xclt() {
+    if [[ "$(uname -s)" == "Darwin" ]]; then
+        echo "== Xcode command line tools"
+
+        xcode-select --install
+    fi
+}
+
 dotfiles() {
     echo "== Dotfiles"
 
@@ -30,7 +38,8 @@ dotfiles() {
     ln -sf ${source}/git/gitignore_global ${dest}/.gitignore_global
     ln -sf ${source}/vimrc ${dest}/.vimrc
 
-    git config --global core.excludesfile ${dest}/.gitignore_global
+    echo -e "\n[core]\n\texcludesfile = ${dest}/.gitignore_global" \
+        >> ${dest}/.gitconfig
 
     if [[ "$(uname -s)" == "Darwin" ]]; then
         ln -sf ${source}/hushlogin ${dest}/.hushlogin
@@ -96,6 +105,7 @@ read -p "Are you sure you want to continue? (yes/no) " answer
 if [[ ${answer} == "yes" || ${answer} == "y" ]]; then
     dotfiles
     directories
+    xclt
     install_brew
     vim_plugins
 else
