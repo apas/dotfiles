@@ -1312,15 +1312,15 @@
 		<integer>1</integer>
 	</dict>
 	<key>NSWindow Frame NSFontPanel</key>
-	<string>828 102 847 444 0 0 1920 1080 </string>
+	<string>120 140 689 247 0 0 1920 1057 </string>
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>383 47 606 469 0 0 1920 1057 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>817 282 918 512 0 0 1920 1057 </string>
+	<string>817 275 796 473 0 0 1920 1057 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>155 473 592 584 0 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 0 955 1057 0 0 1920 1057 </string>
+	<string>226 130 710 452 0 0 1920 1057 </string>
 	<key>NeverWarnAboutShortLivedSessions_7F81A283-52DD-49AC-8C97-AC50DF3EA8EF</key>
 	<true/>
 	<key>NeverWarnAboutShortLivedSessions_7F81A283-52DD-49AC-8C97-AC50DF3EA8EF_selection</key>
@@ -2133,6 +2133,8 @@
 	<true/>
 	<key>NoSyncInstallationId</key>
 	<string>E40830F3-DE00-46A3-87F6-44D3B951F571</string>
+	<key>NoSyncNeverAskAboutSettingAlternateMouseScroll</key>
+	<true/>
 	<key>NoSyncPermissionToShowTip</key>
 	<false/>
 	<key>NoSyncSavePanelSavedSettings_StartSessionLog</key>
@@ -2214,7 +2216,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2018-03-26T17:00:31Z</date>
+	<date>2018-04-21T10:27:03Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SavePasteHistory</key>
@@ -2232,7 +2234,7 @@
 	<key>SmartPlacement</key>
 	<true/>
 	<key>SplitPaneDimmingAmount</key>
-	<real>0.40000000596046448</real>
+	<real>0.21149088541666666</real>
 	<key>StretchTabsToFillBar</key>
 	<true/>
 	<key>SwitchTabModifier</key>
