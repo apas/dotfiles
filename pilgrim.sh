@@ -21,6 +21,14 @@ install_brew() {
     fi
 }
 
+macos() {
+    if [[ "$(uname -s)" == "Darwin" ]]; then
+        echo "== macOS defaults"
+
+        ./macos/defaults.sh
+    fi
+}
+
 xclt() {
     if [[ "$(uname -s)" == "Darwin" ]]; then
         echo "== Xcode command line tools"
@@ -105,6 +113,7 @@ read -p "Are you sure you want to continue? (yes/no) " answer
 if [[ ${answer} == "yes" || ${answer} == "y" ]]; then
     dotfiles
     directories
+    macos
     xclt
     install_brew
     vim_plugins

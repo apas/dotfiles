@@ -36,7 +36,7 @@ defaults write com.apple.Safari "com.apple.Safari.ContentPageGroupIdentifier.Web
 defaults write NSGlobalDomain WebKitDeveloperExtras -bool true
 
 # Automatically show scrollbars
-defaults write NSGlobalDomain AppleShowScrollBars -string "Automatic"
+defaults write NSGlobalDomain AppleShowScrollBars -string "WhenScrolling"
 # Possible values: `WhenScrolling`, `Automatic` and `Always`
 
 # Save to disk (not to iCloud) by default
@@ -61,6 +61,15 @@ defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool false
 
 # Finder: show path bar
 defaults write com.apple.finder ShowPathbar -bool true
+
+# Finder: show status bar
+defaults write com.apple.finder ShowStatusBar -bool true
+
+# When performing a search, search the current folder by default
+defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
+
+# Keep folders on top when sorting by name
+defaults write com.apple.finder _FXSortFoldersFirst -bool true
 
 # Disable Dashboard
 defaults write com.apple.dashboard mcx-disabled -bool true
@@ -104,14 +113,6 @@ defaults write com.apple.SoftwareUpdate AutomaticCheckEnabled -bool true
 
 # Automatically download apps purchased on other Macs
 # defaults write com.apple.SoftwareUpdate ConfigDataInstall -int 1
-
-# Use `~/Torrents` to store incomplete downloads
-defaults write org.m0k.transmission UseIncompleteDownloadFolder -bool true
-defaults write org.m0k.transmission IncompleteDownloadFolder -string "${HOME}/Torrents"
-
-# Don’t prompt for confirmation before downloading
-defaults write org.m0k.transmission DownloadAsk -bool false
-defaults write org.m0k.transmission MagnetOpenAsk -bool false
 
 # Dim the Dock Icon of any 'Hidden' Applications:
 # defaults write com.apple.Dock showhidden -bool YES
