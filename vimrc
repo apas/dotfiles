@@ -59,6 +59,9 @@ map <C-c> "*y
 " Map toggle automatic line comment (a la ST3)
 map <C-/> gcc
 
+" Map insert line above current line and exit insert mode (a la ST3)
+nnoremap <S-o> O<ESC>
+
 " Clear previous search highlights
 " <C-l> would originally redraw the screen; now we first clear, then redraw
 nnoremap <C-l> :nohl<CR><C-L>
