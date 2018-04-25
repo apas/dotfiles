@@ -35,7 +35,6 @@ export PYTHONDONTWRITEBYTECODE=1
 # color modifications for brew grc
 export CLICOLOR=1
 export LSCOLORS=Exfxcxdxbxegedabagacad
-export TERM=xterm-color
 
 if [[ "$(uname -s)" == "Darwin" ]]; then
     export GREP_OPTIONS='--color=auto' GREP_COLOR='1;32'

@@ -38,20 +38,20 @@ autocmd ColorScheme * hi Search cterm=NONE ctermfg=white ctermbg=red
 filetype on
 autocmd FileType make set noexpandtab shiftwidth=4
 
-" Show char width column
-set colorcolumn=+1
-" Color highlight char width col
+" Expand textwidth char limit column
+let &colorcolumn=join(range(81,335),",")
+" Slightly change background color of expanded textwidth char column
 highlight ColorColumn ctermbg=lightgrey
 
 " Show current cursor line
-set cursorline 
-" Color highlight c. cursor l.
-highlight CursorLine ctermbg=grey cterm=NONE
+set cursorline
+" Color highlight current cursor line
+highlight CursorLine ctermbg=lightgrey cterm=NONE
 
-" Color highlight line #s
+" Color highlight line numbers
 highlight LineNr ctermfg=NONE
-" Color highlight c. cursor l.
-highlight CursorLineNr ctermfg=NONE             
+" Color highlight current cursor line number
+highlight CursorLineNr ctermfg=brown
 
 " Map yanking in visual mode to system's copy
 map <C-c> "*y
@@ -65,11 +65,6 @@ nnoremap <S-o> O<ESC>
 " Clear previous search highlights
 " <C-l> would originally redraw the screen; now we first clear, then redraw
 nnoremap <C-l> :nohl<CR><C-L>
-
-" Enable Lightline in xterm-color256 mode for proper compatibility
-if !has('gui_running')
-  set t_Co=256
-endif
 
 " Customize Lightline with a minimal set of configs + current git branch
 let g:lightline = {
