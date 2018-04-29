@@ -50,6 +50,11 @@ dotfiles() {
     echo -e "\n[core]\n\texcludesfile = ${dest}/.gitignore_global" \
         >> ${dest}/.gitconfig
 
+    gitconfig="\n[pager]\n\tlog = ${dest}/.bin/diff-highlight | less\n"
+    gitconfig="${gitconfig}\tshow = ${dest}/.bin/diff-highlight | less\n"
+    gitconfig="${gitconfig}\tdiff = ${dest}/.bin/diff-highlight | less"
+    echo -e "${gitconfig}" >> ${dest}/.gitconfig
+
     if [[ "$(uname -s)" == "Darwin" ]]; then
         ln -sf ${source}/boom/boom ${dest}/.boom
     fi
