@@ -35,7 +35,7 @@
 	<key>CopyLastNewline</key>
 	<false/>
 	<key>CopySelection</key>
-	<true/>
+	<false/>
 	<key>Custom Color Presets</key>
 	<dict>
 		<key>Dracula</key>
@@ -1318,11 +1318,11 @@
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>383 47 606 469 0 0 1920 1057 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>493 247 937 512 0 0 1920 1057 </string>
+	<string>510 492 796 473 0 0 1920 1057 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>155 473 592 584 0 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>226 130 710 452 0 0 1920 1057 </string>
+	<string>1046 261 710 452 0 0 1920 1057 </string>
 	<key>NeverWarnAboutShortLivedSessions_7F81A283-52DD-49AC-8C97-AC50DF3EA8EF</key>
 	<true/>
 	<key>NeverWarnAboutShortLivedSessions_7F81A283-52DD-49AC-8C97-AC50DF3EA8EF_selection</key>
@@ -2220,7 +2220,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2018-04-25T19:05:37Z</date>
+	<date>2018-04-28T22:33:41Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SavePasteHistory</key>
@@ -2274,7 +2274,7 @@
 	<key>UseLionStyleFullscreen</key>
 	<true/>
 	<key>UseMetal</key>
-	<true/>
+	<false/>
 	<key>WebKitDefaultFontSize</key>
 	<integer>11</integer>
 	<key>WebKitStandardFont</key>
