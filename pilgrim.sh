@@ -45,12 +45,12 @@ dotfiles() {
     ln -sf ${source}/git/gitconfig ${dest}/.gitconfig
     ln -sf ${source}/git/gitignore_global ${dest}/.gitignore_global
     ln -sf ${source}/vimrc ${dest}/.vimrc
+    ln -sf ${source}/hushlogin ${dest}/.hushlogin
 
     echo -e "\n[core]\n\texcludesfile = ${dest}/.gitignore_global" \
         >> ${dest}/.gitconfig
 
     if [[ "$(uname -s)" == "Darwin" ]]; then
-        ln -sf ${source}/hushlogin ${dest}/.hushlogin
         ln -sf ${source}/boom/boom ${dest}/.boom
     fi
 }
