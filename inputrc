@@ -1,6 +1,7 @@
 set show-all-if-ambiguous on
 set completion-ignore-case on
 set mark-symlinked-directories on
+set colored-stats on
 "\e[A": history-search-backward
 "\e[B": history-search-forward
 "\e[Z": menu-complete
