@@ -28,6 +28,7 @@ set noshowcmd                   " Don't show incomplete cmds [bc Lightline]
 set laststatus=2                " Always show status bar
 set autoindent                  " Use existing indent depth starting a new line
 set smartindent                 " Do smart indenting when starting a new line
+set ttimeoutlen=1               " Exit insert/visual mode without ESC delay
 set background=light            " Set solarized background color
 colorscheme solarized           " Set solarized colorscheme
 
