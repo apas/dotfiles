@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# Original script found at https://bitbucket.org/sietsebb/dotfiles
+# Prettily convert a pdf file to png
+
+src="$1"
+dest=$(basename -s .pdf "$src").png
+
+convert -background white -alpha remove -density 288 $src -resize 25% $dest

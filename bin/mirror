@@ -1,0 +1,25 @@
+#!/bin/bash
+
+# Original script found at https://bitbucket.org/sietsebb/dotfiles
+# Download a directory and everything beneath it, plus required files.
+
+# --mirror
+#     sets the following options:
+#     -r                   # recursive retrieving
+#     -N                   # turn on time-stamping
+#     -l inf               # max level (depth) of recursive retrieving: infinite
+#     --no-remove-listing  # keep a .listing file of all downloaded files
+
+# --page-requisites
+#     Download all files needed to properly display a given HTML page
+
+# --no-parent
+#     do not ever ascend to the parent directory
+
+# --convert-links
+#   convert the links in the document to make them suitable for local viewing
+
+# -P ./
+#     save page-requisite files under the directory ./
+
+wget --mirror --page-requisites --no-parent --convert-links -P ./ "$@"
