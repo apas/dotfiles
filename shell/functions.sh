@@ -244,6 +244,12 @@ commit-latest() {
     echo "Please specify an integer to determine number of commits."
   else
     git log --format="%h - %s - %an" -n ${1}
+
+    if [[ "$(uname -s)" == "Darwin" ]]; then
+        git log --format="%h - %s - %an" -n ${1} | \
+            awk '{print $1}' | \
+            pbcopy
+    fi
   fi
 }
 
