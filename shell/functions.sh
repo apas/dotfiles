@@ -247,7 +247,7 @@ commit-latest() {
 
     if [[ "$(uname -s)" == "Darwin" ]]; then
         git log --format="%h - %s - %an" -n ${1} | \
-            awk '{print $1}' | \
+            awk 'END {print $1}' | \
             pbcopy
     fi
   fi
