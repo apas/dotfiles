@@ -361,16 +361,24 @@ gh() {
   fi
 }
 
+m3u8() {
+    if [[ $# -eq 1 ]]; then
+        ffmpeg -protocol_whitelist file,http,https,tcp,tls,crypto \
+            -i "${1}" \
+            -c copy video.mp4
+    elif [[ $# -eq 2 ]]; then
+        m3u8 ${2}
+        gifify video.mp4
+        rm video.mp4
+    else
+        echo "m3u8 [-g] <.m3u8 link>"
+        echo -e "-g\t\tsaves m3u8 directly to gif"
+    fi
+}
+
 gifify() {
   if [[ -n "$1" ]]; then
-    ffmpeg \
-      -i $1 \
-      -pix_fmt rgb32 \
-      -r 25 \
-      -f gif - | \
-      gifsicle --optimize=3 \
-      --delay=3 \
-      > out.gif
+    ffmpeg -i ${1} -filter_complex "fps=10" out.gif
   else
     echo "proper usage: gifify <input_movie.mov>"
   fi
