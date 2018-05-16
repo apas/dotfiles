@@ -377,10 +377,13 @@ m3u8() {
 }
 
 gifify() {
-  if [[ -n "$1" ]]; then
+  if [[ $# -eq 1 ]]; then
     ffmpeg -i ${1} -filter_complex "fps=10" out.gif
+  elif [[ $# -eq 3 ]]; then
+    ffmpeg -i ${3} -filter_complex "fps=10,scale=-1:${2}" out.gif
   else
-    echo "proper usage: gifify <input_movie.mov>"
+    echo "proper usage: gifify [-r size-in-pix] <input_movie.mov>"
+    echo -e "-r\t\tresizes gif to given pixel size keeping aspect ratio"
   fi
 }
 
