@@ -88,12 +88,7 @@ let g:lightline = {
 \   },
 \ }
 
-" Persisent undo --- store all change information in an undodir
-" Check if an undodir exists, otherwise create it w proper permissions
-if !isdirectory($HOME."/.vim/undodir")
-    call mkdir($HOME."/.vim/undodir", "", 0700)
-endif
-set undodir=$HOME/.vim/undodir  " Set undodir path
+set undodir=$HOME/.vim/undodir  " Set persistent undodir path
 set undofile                    " Write changes to the undofile
 set undolevels=1000             " Max # of changes that can be undone
 set undoreload=10000            " Max # of lines to save for undo on buf reload
