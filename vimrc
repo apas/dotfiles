@@ -36,6 +36,14 @@ colorscheme solarized           " Set solarized colorscheme
 " Set search results to white font, red background overriding solarized
 autocmd ColorScheme * hi Search cterm=NONE ctermfg=white ctermbg=red
 
+" Disable markdown syntax highlight because it's dumb
+autocmd filetype markdown set syntax=off
+
+" More efficient saving and closing with using leader key
+nnoremap <leader>q :q!<cr>
+nnoremap <leader>z :wq<cr>
+nnoremap <leader>w :w<cr>
+
 " Set Make tabs to tabs and not spaces
 filetype on
 autocmd FileType make set noexpandtab shiftwidth=4
