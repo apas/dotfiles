@@ -1,8 +1,9 @@
-syntax enable                   " Enable syntax highlighting
-
 " Enable all Pathogen plugins
 execute pathogen#infect()
 
+syntax enable                   " Enable syntax highlighting
+set background=light            " Set solarized background color
+colorscheme solarized           " Set solarized colorscheme
 set encoding=utf8               " Set UTF-8 encoding
 set autoread                    " Reload files changed outside vim
 set nocompatible                " Use vim rather than vi settings
@@ -30,8 +31,10 @@ set autoindent                  " Use existing indent depth starting a new line
 set smartindent                 " Do smart indenting when starting a new line
 set ttimeoutlen=1               " Exit insert/visual mode without ESC delay
 set digraph                     " Support special characters, eg German umlaut
-set background=light            " Set solarized background color
-colorscheme solarized           " Set solarized colorscheme
+set undodir=$HOME/.vim/undodir  " Set persistent undodir path
+set undofile                    " Write changes to the undofile
+set undolevels=1000             " Max # of changes that can be undone
+set undoreload=10000            " Max # of lines to save for undo on buf reload
 
 " Set search results to white font, red background overriding solarized
 autocmd ColorScheme * hi Search cterm=NONE ctermfg=white ctermbg=red
@@ -39,24 +42,14 @@ autocmd ColorScheme * hi Search cterm=NONE ctermfg=white ctermbg=red
 " Disable markdown syntax highlight because it's dumb
 autocmd filetype markdown set syntax=off
 
-" More efficient saving and closing with using leader key
-nnoremap <leader>q :q!<cr>
-nnoremap <leader>z :wq<cr>
-nnoremap <leader>w :w<cr>
-
 " Set Make tabs to tabs and not spaces
 filetype on
 autocmd FileType make set noexpandtab shiftwidth=4
 
-" Expand textwidth char limit column
-let &colorcolumn=join(range(81,335),",")
-" Slightly change background color of expanded textwidth char column
-highlight ColorColumn ctermbg=lightgrey
-
-" Show current cursor line
-set cursorline
-" Color highlight current cursor line
-highlight CursorLine ctermbg=lightgrey cterm=NONE
+" Efficient saving and closing with using leader key
+nnoremap <leader>q :q!<cr>
+nnoremap <leader>z :wq<cr>
+nnoremap <leader>w :w<cr>
 
 " Color highlight line numbers
 highlight LineNr ctermfg=NONE
@@ -64,10 +57,10 @@ highlight LineNr ctermfg=NONE
 highlight CursorLineNr ctermfg=brown
 
 " Map yanking in visual mode to system's copy
-map <C-c> "*y
+vnoremap <C-c> "*y
 
 " Map toggle automatic line comment (a la ST3)
-map <C-/> gcc
+nnoremap <C-/> gcc
 
 " Map insert line above current line and exit insert mode (a la ST3)
 nnoremap <S-o> O<ESC>
@@ -87,8 +80,3 @@ let g:lightline = {
 \   'gitbranch': 'gitbranch#name'
 \   },
 \ }
-
-set undodir=$HOME/.vim/undodir  " Set persistent undodir path
-set undofile                    " Write changes to the undofile
-set undolevels=1000             " Max # of changes that can be undone
-set undoreload=10000            " Max # of lines to save for undo on buf reload
