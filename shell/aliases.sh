@@ -1,6 +1,7 @@
 alias cl='clear'
 alias path="pwd | pbcopy"
 alias venv="virtualenv env"
+alias venv2.7="virtualenv --python=/usr/bin/python2.7 env"
 alias aenv="source env/bin/activate"
 alias denv="deactivate"
 alias code="cd $HOME/git"
