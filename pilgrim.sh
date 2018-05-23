@@ -2,13 +2,13 @@
 
 dest=${1}
 host=${2}
-source=`pwd`
+source=$(pwd)
 
 install_brew() {
     if [[ "$(uname -s)" == "Darwin" ]]; then
         echo "== Brew"
 
-        isbrew=`which brew`
+        isbrew=$(which brew)
 
         if [[ -z ${isbrew} ]]; then
             echo "Brew not installed. Installing brew. . . "
@@ -96,10 +96,40 @@ vim_plugins() {
         "https://github.com/kshenoy/vim-signature.git" \
         "https://github.com/tpope/vim-unimpaired.git")
 
-    mkdir ${source}/vim/bundle
-    for plugin in "${plugins[@]}"; do
-        git -C ${source}/vim/bundle clone ${plugin};
-    done
+    mkdir -p ${source}/vim/bundle
+
+    isgit=$(which git)
+
+    if [[ -z ${isgit} ]]; then
+        echo "Git not installed. Downloading Vim plugins with wget. . ."
+
+        iswget=$(which wget)
+
+        if [[ -z ${iswget} ]]; then
+            echo "[Warning]: wget not installed."
+            echo "Can't download GitHub repos with cURL because of cookies."
+            echo "Please download Vim plugins manually."
+        else
+            for plugin in "${plugins[@]}"; do
+                plugin=${plugin%????};
+                plugin=${plugin}/archive/master.zip;
+                wget -P ${source}/vim/bundle ${plugin};
+                unzip -q ${source}/vim/bundle/master.zip \
+                    -d ${source}/vim/bundle/temp;
+                plugindir=$(ls ${source}/vim/bundle/temp);
+                plugindir=${plugindir%???????};
+                mv ${source}/vim/bundle/temp/* ${source}/vim/bundle/${plugindir};
+                rm -rf ${source}/vim/bundle/temp \
+                    ${source}/vim/bundle/master.zip;
+            done
+        fi
+    else
+        echo "Git installed. Cloning Vim plugins. . ."
+
+        for plugin in "${plugins[@]}"; do
+            git -C ${source}/vim/bundle clone ${plugin};
+        done
+    fi
 }
 
 if [[ ! $# -eq 2 ]]; then
@@ -127,5 +157,4 @@ if [[ ${answer} == "yes" || ${answer} == "y" ]]; then
     vim_plugins
 else
     echo "Exiting."
-    exit 0
 fi
