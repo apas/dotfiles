@@ -89,11 +89,8 @@ vim_plugins() {
     declare -a plugins=("https://github.com/vim-scripts/delimitMate.vim.git" \
         "https://github.com/itchyny/lightline.vim.git" \
         "https://github.com/tomtom/tcomment_vim.git" \
-        "https://github.com/qpkorr/vim-bufkill.git" \
         "https://github.com/altercation/vim-colors-solarized.git" \
-        "https://github.com/itchyny/vim-gitbranch.git" \
         "https://github.com/airblade/vim-gitgutter.git" \
-        "https://github.com/kshenoy/vim-signature.git" \
         "https://github.com/tpope/vim-unimpaired.git")
 
     mkdir -p ${source}/vim/bundle

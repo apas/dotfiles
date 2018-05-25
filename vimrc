@@ -46,6 +46,9 @@ autocmd filetype markdown set syntax=off
 filetype on
 autocmd FileType make set noexpandtab shiftwidth=4
 
+" Close open buffer without closing window split
+command BD bp|bd #
+
 " Efficient saving and closing with using leader key
 nnoremap <leader>q :q!<cr>
 nnoremap <leader>z :wq<cr>
@@ -75,8 +78,5 @@ let g:lightline = {
 \ 'active': {
 \   'left': [['mode', 'paste'], ['gitbranch'], ['filename', 'modified']],
 \   'right': [['lineinfo'], ['percent']]
-\   },
-\ 'component_function': {
-\   'gitbranch': 'gitbranch#name'
-\   },
+\   }
 \ }
