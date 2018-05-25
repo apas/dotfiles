@@ -93,6 +93,19 @@ batt() {
     echo "Remaining: ${remaining} hrs, ${pct}%"
 }
 
+vupd() {
+    current_dir=$(pwd)
+    cd $HOME/.vim/bundle
+    for plugin in $(ls); do
+        cd "${plugin}"
+        echo "== Updating plugin: ${plugin}"
+        git pull
+        echo " "
+        cd ..
+    done
+    cd ${current_dir}
+}
+
 move-here() {
   numberOfFiles=${1}
 
