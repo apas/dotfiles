@@ -118,7 +118,7 @@ move-here() {
 }
 
 tdir() {
-  tar -zcvf ${1}.tar.gz ${1}
+  tar -zcvf ${1%?}.tar.gz ${1%?}
 }
 
 utdir() {
