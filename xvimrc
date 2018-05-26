@@ -1,0 +1,8 @@
+set number                      " Line numbers are good
+set expandtab                   " Use the appropriate number of spaces to tab
+set wrap                        " Wrap lines longer than 80 chars 
+set hlsearch                    " Highlight searches by default
+set ttimeoutlen=1               " Exit insert/visual mode without ESC delay
+
+" Map yanking in visual mode to system's copy
+vnoremap <C-c> "*y

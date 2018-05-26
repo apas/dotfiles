@@ -57,6 +57,7 @@ dotfiles() {
 
     if [[ "$(uname -s)" == "Darwin" ]]; then
         ln -sf ${source}/boom/boom ${dest}/.boom
+        ln -sf ${source}/xvimrc ${dest}/.xvimrc
     fi
 }
 
