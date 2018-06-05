@@ -10,6 +10,7 @@ alias giddy="source $HOME/.bash_profile"
 alias ~="cd $HOME"
 alias slack="node $HOME/git/terminal-slack/main.js"
 alias gifs="boom gifs"
+alias bu="brew update; brew upgrade; brew cleanup -s"
 
 alias archey='archey -c'
 alias server="python -m SimpleHTTPServer"
