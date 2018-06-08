@@ -69,8 +69,8 @@ directories() {
     ln -sfn ${source}/shell ${dest}/.shell
     ln -sfn ${source}/vim ${dest}/.vim
 
-    mkdir -p ${dest}/.vim/undodir
-    chmod go-rwx ${dest}/.vim/undodir
+    mkdir -p ${dest}/.vim/{undodir,swp}
+    chmod go-rwx ${dest}/.vim/{undodir,swp}
 
     if [[ "$(uname -s)" == "Darwin" ]]; then
         ln -sfn ${source}/pandoc ${dest}/.pandoc

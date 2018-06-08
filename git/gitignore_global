@@ -5,7 +5,8 @@
 .*.*.swp
 vim/undodir/
 vim/bundle/
-vim/spell
+vim/spell/
+vim/swp/
 
 # WebStorm
 .idea/
