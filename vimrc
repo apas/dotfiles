@@ -35,6 +35,8 @@ set undodir=$HOME/.vim/undodir  " Set persistent undodir path
 set undofile                    " Write changes to the undofile
 set undolevels=1000             " Max # of changes that can be undone
 set undoreload=10000            " Max # of lines to save for undo on buf reload
+set splitright                  " Splitting will put the new window right
+set splitbelow                  " Splitting will put the new window below
 
 " Set search results to white font, red background overriding solarized
 autocmd ColorScheme * hi Search cterm=NONE ctermfg=white ctermbg=red
