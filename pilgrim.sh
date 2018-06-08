@@ -88,7 +88,6 @@ vim_plugins() {
     echo "== Vim plugins"
 
     declare -a plugins=("https://github.com/vim-scripts/delimitMate.vim.git" \
-        "https://github.com/itchyny/lightline.vim.git" \
         "https://github.com/tomtom/tcomment_vim.git" \
         "https://github.com/altercation/vim-colors-solarized.git" \
         "https://github.com/airblade/vim-gitgutter.git" \

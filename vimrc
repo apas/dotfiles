@@ -74,11 +74,21 @@ nnoremap <S-o> O<ESC>
 " <C-l> would originally redraw the screen; now we first clear, then redraw
 nnoremap <C-l> :nohl<CR><C-L>
 
-" Customize Lightline with a minimal set of configs + current git branch
-let g:lightline = {
-\ 'colorscheme': 'solarized',
-\ 'active': {
-\   'left': [['mode', 'paste'], ['gitbranch'], ['filename', 'modified']],
-\   'right': [['lineinfo'], ['percent']]
-\   }
-\ }
+" Custom status line mode dictionary
+let g:cmode={
+  \ 'n' : 'NORMAL',
+  \ 'v' : 'VISUAL',
+  \ 'V' : 'VISUAL',
+  \ 'i' : 'INSERT'
+  \ }
+
+" Color group highlight for status line
+hi User1 ctermbg=007
+
+" Custom status line - current mode buffer path modified column lines
+set statusline=%1*
+set statusline+=%{(g:cmode[mode()])}
+set statusline+=\ \[%n]
+set statusline+=\ %<%F\ %m
+set statusline+=%=
+set statusline+=%c%10(%l/%L%)%10(%p%%\%)
