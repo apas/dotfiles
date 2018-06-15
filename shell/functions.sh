@@ -312,11 +312,15 @@ ck() {
 }
 
 port() {
-  lsof -i :$1
-}
-
-killport() {
-  for i in `port 5000 | awk '{print $2}'`; do kill ${i}; done
+    if [[ $# -eq 0 ]]; then
+        echo "List open files by process at PORT"
+        echo -e "\nUsage:\n\tport [-k] PORT"
+        echo -e "\n\t-k:\tkills process at PORT"
+    elif [[ $# -eq 1 ]]; then
+        lsof -i :${1}
+    elif [[ $# -eq 2 && ${1} == "-k" ]]; then
+        lsof -i :${2} | awk '{print $2}' | tail -n 1 | xargs kill
+    fi
 }
 
 mcd() {
