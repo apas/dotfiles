@@ -73,6 +73,8 @@ directories() {
     mkdir -p ${dest}/.vim/{undodir,swp}
     chmod go-rwx ${dest}/.vim/{undodir,swp}
 
+    mkdir -p ${dest}/.tmux_tmp
+
     if [[ "$(uname -s)" == "Darwin" ]]; then
         ln -sfn ${source}/pandoc ${dest}/.pandoc
     fi
