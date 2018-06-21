@@ -32,6 +32,27 @@ ds() {
     fi
 }
 
+t() {
+    if [[ $# -eq 0 ]]; then
+        tmux -CC
+    elif [[ ${1} == "-n" ]]; then
+        tmux -CC new -s ${2}
+    elif [[ ${1} == "-a" ]]; then
+        tmux -CC attach -t ${2}
+    elif [[ ${1} == "-l" ]]; then
+        tmux ls
+    elif [[ ${1} == "-k" ]]; then
+        tmux kill-session -t ${2}
+    elif [[ $# -eq 3 ]]; then
+        if [[ ${1} == "-r" ]]; then
+            tmux rename-session -t ${2} ${3}
+        fi
+    else
+        echo "iTerm tmux integration wrapper"
+        echo "Use: t [-n | -a | -l | -k | -r NAME NAME_NEW]"
+    fi
+}
+
 encrypt() {
     file=$1
 
