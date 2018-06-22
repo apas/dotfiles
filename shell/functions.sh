@@ -35,10 +35,12 @@ ds() {
 t() {
     if [[ $# -eq 0 ]]; then
         tmux -CC
-    elif [[ ${1} == "-n" ]]; then
-        tmux -CC new -s ${2}
     elif [[ ${1} == "-a" ]]; then
-        tmux -CC attach -t ${2}
+        if tmux has-session -t ${2} > /dev/null 2>&1; then
+            tmux -CC attach -t ${2}
+        else
+            tmux -CC new -s ${2}
+        fi
     elif [[ ${1} == "-l" ]]; then
         tmux ls
     elif [[ ${1} == "-k" ]]; then
@@ -49,7 +51,12 @@ t() {
         fi
     else
         echo "iTerm tmux integration wrapper"
-        echo "Use: t [-n | -a | -l | -k | -r NAME NAME_NEW]"
+        echo "Use: t [-a | -l | -k | -r NAME NAME_NEW]"
+        echo " "
+        echo -e "Options:\n\t-a:\tattach to or create session"
+        echo -e "\t-l:\tlist tmux sessions"
+        echo -e "\t-k:\tkill tmux session"
+        echo -e "\t-r:\trename tmux session"
     fi
 }
 
