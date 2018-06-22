@@ -2,6 +2,20 @@ pdf() {
   convert -flatten ${1}[0] - 2>/dev/null | imgcat
 }
 
+mergepdf() {
+    if [[ $# -eq 0 ]]; then
+        echo "Merge PDFs."
+        echo -e "Use:\n\tmergepdf FILE1 FILE2 FILE3..."
+    else
+        gs -q \
+            -dNOPAUSE \
+            -dBATCH \
+            -sDEVICE=pdfwrite \
+            -sOutputFile=merged.pdf \
+            ${@}
+    fi
+}
+
 edit() {
   if [[ $# -eq 1 ]]; then
     if [[ $1 == "aliases" ]]; then
