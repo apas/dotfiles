@@ -1318,11 +1318,11 @@
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>383 47 606 469 0 0 1920 1057 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>179 143 770 429 0 0 1920 1057 </string>
+	<string>561 417 796 473 0 0 1920 1057 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>155 473 592 584 0 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>436 499 710 452 0 0 1920 1057 </string>
+	<string>226 130 710 452 0 0 1920 1057 </string>
 	<key>NeverWarnAboutShortLivedSessions_7F81A283-52DD-49AC-8C97-AC50DF3EA8EF</key>
 	<true/>
 	<key>NeverWarnAboutShortLivedSessions_7F81A283-52DD-49AC-8C97-AC50DF3EA8EF_selection</key>
@@ -2243,6 +2243,8 @@
 	<real>0.21149088541666666</real>
 	<key>StretchTabsToFillBar</key>
 	<true/>
+	<key>SwitchPaneModifier</key>
+	<integer>5</integer>
 	<key>SwitchTabModifier</key>
 	<integer>4</integer>
 	<key>SwitchWindowModifier</key>
