@@ -7,7 +7,7 @@ cyn="$(tput setaf 6 2>/dev/null || echo '\e[0;36m')"
 rst="$(tput sgr 0 2>/dev/null || echo '\e[0m')"
 
 if [[ "$(uname -s)" == "Darwin" ]]; then
-    export PS1="\[$blu\]\w\[$cyn\]\$gitb\[$red\]\$gitd\[$rst\] "
+    export PS1="\[$blu\]\W\[$cyn\]\$gitb\[$red\]\$gitd\[$rst\] "
 else
     m="\[$grn\][ulysses]\[$grn\]\[$rst\]"
     export PS1="$m \[$blu\]\w\[$cyn\]\$gitb\[$red\]\$gitd\[$rst\] "
