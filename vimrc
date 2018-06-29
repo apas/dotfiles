@@ -75,6 +75,12 @@ nnoremap <S-o> O<ESC>
 " <C-l> would originally redraw the screen; now we first clear, then redraw
 nnoremap <C-l> :nohl<CR><C-L>
 
+" Provide my `pub` shell script as a Vim command
+" Build LaTeX PDFs from Markdown with Pandoc
+" No need for `Ctrl-z` and `fg` any more
+command Pdf execute "silent !pub -d % &" | silent redraw!
+command Tufte execute "silent !pub -t % &" | silent redraw!
+
 " Custom status line mode dictionary
 let g:cmode={
   \ 'n' : 'NORMAL',
