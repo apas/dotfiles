@@ -181,6 +181,8 @@ elif [[ ${1} == "--slides" || ${1} == "-s" ]]; then
         -o ${output}.pdf
 fi
 
-open -a Preview ${output}.pdf
+open -g -a Preview ${output}.pdf && \
+    echo "tell application \"Preview\" to activate" | osascript - && \
+    open -a iTerm
 
 exit
