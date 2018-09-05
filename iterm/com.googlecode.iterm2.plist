@@ -1260,16 +1260,10 @@
 	<true/>
 	<key>MaxVertically</key>
 	<false/>
-	<key>NSFontPanelAttributes</key>
-	<string>1, 4</string>
 	<key>NSNavLastRootDirectory</key>
 	<string>~/Dropbox/git/dotfiles/iterm</string>
 	<key>NSNavPanelExpandedSizeForOpenMode</key>
 	<string>{712, 448}</string>
-	<key>NSNavPanelExpandedSizeForSaveMode</key>
-	<string>{712, 448}</string>
-	<key>NSNavPanelExpandedStateForSaveMode</key>
-	<true/>
 	<key>NSQuotedKeystrokeBinding</key>
 	<string></string>
 	<key>NSRepeatCountBinding</key>
@@ -1278,11 +1272,6 @@
 	<false/>
 	<key>NSScrollViewShouldScrollUnderTitlebar</key>
 	<false/>
-	<key>NSSplitView Subview Frames NSColorPanelSplitView</key>
-	<array>
-		<string>0.000000, 0.000000, 224.000000, 263.000000, NO, NO</string>
-		<string>0.000000, 264.000000, 224.000000, 43.000000, NO, NO</string>
-	</array>
 	<key>NSTableView Columns v2 KeyBingingTable</key>
 	<data>
 	YnBsaXN0MDDUAQIDBAUGNjdYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3AS
@@ -1311,18 +1300,12 @@
 		<key>TB Is Shown</key>
 		<integer>1</integer>
 	</dict>
-	<key>NSWindow Frame NSFontPanel</key>
-	<string>964 229 689 113 0 0 1920 1057 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>650 498 620 392 0 0 1920 1057 </string>
-	<key>NSWindow Frame SessionsPreferences</key>
-	<string>383 47 606 469 0 0 1920 1057 </string>
+	<string>330 288 620 392 0 0 1280 777 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>561 417 796 473 0 0 1920 1057 </string>
-	<key>NSWindow Frame UKCrashReporter</key>
-	<string>155 473 592 584 0 0 1920 1057 </string>
+	<string>64 264 796 486 0 0 1280 777 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>226 130 710 452 0 0 1920 1057 </string>
+	<string>131 73 710 452 0 0 1280 777 </string>
 	<key>NeverWarnAboutShortLivedSessions_7F81A283-52DD-49AC-8C97-AC50DF3EA8EF</key>
 	<true/>
 	<key>NeverWarnAboutShortLivedSessions_7F81A283-52DD-49AC-8C97-AC50DF3EA8EF_selection</key>
@@ -2136,18 +2119,11 @@
 	<key>NoSyncHaveWarnedAboutPasteConfirmationChange</key>
 	<true/>
 	<key>NoSyncInstallationId</key>
-	<string>E40830F3-DE00-46A3-87F6-44D3B951F571</string>
-	<key>NoSyncNeverAskAboutSettingAlternateMouseScroll</key>
-	<true/>
+	<string>4D845DE8-E5B9-423B-86AB-95B4EAE1E178</string>
 	<key>NoSyncPermissionToShowTip</key>
 	<false/>
-	<key>NoSyncSavePanelSavedSettings_StartSessionLog</key>
-	<dict>
-		<key>Initial Directory</key>
-		<string>/Users/apas/Desktop</string>
-	</dict>
 	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
-	<real>537483936.06424797</real>
+	<real>546534362.33011401</real>
 	<key>OnlyWhenMoreTabs</key>
 	<false/>
 	<key>OpenArrangementAtStartup</key>
@@ -2218,11 +2194,11 @@
 	<key>SUFeedAlternateAppNameKey</key>
 	<string>iTerm</string>
 	<key>SUFeedURL</key>
-	<string>https://iterm2.com/appcasts/final.xml?shard=29</string>
+	<string>https://iterm2.com/appcasts/final.xml?shard=21</string>
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2018-06-24T17:05:13Z</date>
+	<date>2018-08-31T14:07:31Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SavePasteHistory</key>
@@ -2267,8 +2243,6 @@
 	</array>
 	<key>TripleClickSelectsFullWrappedLines</key>
 	<false/>
-	<key>UKCrashReporterLastCrashReportDate</key>
-	<real>1521766400</real>
 	<key>URLHandlersByGuid</key>
 	<dict/>
 	<key>Use background pattern indicator</key>
@@ -2280,7 +2254,7 @@
 	<key>UseLionStyleFullscreen</key>
 	<true/>
 	<key>UseMetal</key>
-	<false/>
+	<true/>
 	<key>WebKitDefaultFontSize</key>
 	<integer>11</integer>
 	<key>WebKitStandardFont</key>
@@ -2293,6 +2267,8 @@
 	<integer>0</integer>
 	<key>WordCharacters</key>
 	<string>/-+\~_.</string>
+	<key>disableMetalWhenUnplugged</key>
+	<false/>
 	<key>findIgnoreCase_iTerm</key>
 	<true/>
 	<key>findMode_iTerm</key>
@@ -2300,8 +2276,6 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.1.6</string>
-	<key>moveToApplicationsFolderAlertSuppress</key>
-	<true/>
+	<string>3.2.0</string>
 </dict>
 </plist>
