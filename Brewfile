@@ -1,15 +1,17 @@
+tap "homebrew/boneyard"
+tap "homebrew/bundle"
+tap "homebrew/cask"
+tap "homebrew/cask-versions"
+tap "homebrew/core"
+tap "homebrew/science"
 tap "jez/formulae"
 tap "thoughtbot/formulae"
-tap "homebrew/science"
-tap "homebrew/core"
-tap "homebrew/bundle"
-tap "caskroom/versions"
-tap "caskroom/cask"
 cask "java"
 brew "archey"
 brew "gcc"
 brew "awk"
 brew "bash"
+brew "bat"
 brew "ccat"
 brew "cloc"
 brew "cmake"
@@ -71,6 +73,7 @@ cask "sublime-text"
 cask "transmission"
 cask "vanilla"
 mas "1Password", id: 443987910
+mas "Agenda", id: 1287445660
 mas "Encrypto", id: 935235287
 mas "Evernote", id: 406056744
 mas "iMovie", id: 408981434
@@ -81,4 +84,5 @@ mas "Pages", id: 409201541
 mas "Telegram", id: 747648890
 mas "Things3", id: 904280696
 mas "Tweetbot", id: 557168941
+mas "Wipr", id: 1320666476
 mas "Xcode", id: 497799835
