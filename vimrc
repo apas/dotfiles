@@ -1,7 +1,7 @@
 " Enable all Pathogen plugins
 execute pathogen#infect()
 
-syntax enable                   " Enable syntax highlighting
+syntax off                      " Enable syntax highlighting
 set background=light            " Set solarized background color
 colorscheme solarized           " Set solarized colorscheme
 set encoding=utf8               " Set UTF-8 encoding
@@ -41,9 +41,6 @@ set splitbelow                  " Splitting will put the new window below
 
 " Set search results to white font, red background overriding solarized
 autocmd ColorScheme * hi Search cterm=NONE ctermfg=white ctermbg=red
-
-" Disable markdown syntax highlight because it's dumb
-autocmd filetype markdown set syntax=off
 
 " Set Make tabs to tabs and not spaces
 filetype on
