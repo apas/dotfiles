@@ -86,9 +86,6 @@ let g:cmode={
   \ 'i' : 'INSERT'
   \ }
 
-" Color group highlight for status line
-hi User1 ctermbg=007
-
 " Custom status line - current mode buffer path modified column lines
 set statusline=%1*
 set statusline+=%{(g:cmode[mode()])}
