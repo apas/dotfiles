@@ -24,6 +24,7 @@ export EDITOR='vim'
 export TMUX_TMPDIR=$HOME/.tmux_tmp
 
 shopt -s no_empty_cmd_completion
+shopt -s extglob
 
 shopt -s cmdhist
 shopt -s cdspell
