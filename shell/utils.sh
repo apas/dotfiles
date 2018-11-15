@@ -1,5 +1,3 @@
-source $HOME/.shell/prompt.sh
-
 red="$(tput setaf 1 2>/dev/null || echo '\e[0;31m')"
 grn="$(tput setaf 2 2>/dev/null || echo '\e[0;32m')"
 blu="$(tput setaf 4 2>/dev/null || echo '\e[0;34m')"
@@ -7,17 +5,16 @@ cyn="$(tput setaf 6 2>/dev/null || echo '\e[0;36m')"
 rst="$(tput sgr 0 2>/dev/null || echo '\e[0m')"
 
 if [[ "$(uname -s)" == "Darwin" ]]; then
-    export PS1="\[$blu\]\W\[$cyn\]\$gitb\[$red\]\$gitd\[$rst\] "
+    export PS1="\[$blu\]\W\[$cyn\]\[$rst\] "
 else
-    m="\[$grn\][ulysses]\[$grn\]\[$rst\]"
-    export PS1="$m \[$blu\]\w\[$cyn\]\$gitb\[$red\]\$gitd\[$rst\] "
+    m="\[$grn\][winston]\[$grn\]\[$rst\]"
+    export PS1="$m \[$blu\]\w\[$cyn\]\[$rst\] "
 fi
 
 if [[ "$(uname -s)" == "Linux" ]]; then
     export PATH=$HOME/.remote:$PATH
 fi
 
-# /usr/local/texlive/2017basic/bin/x86_64-darwin
 export PATH=$HOME/.bin:$PATH:$HOME/.go/bin:$HOME/.cargo/bin
 export GOPATH=$HOME/.go
 export EDITOR='vim'
