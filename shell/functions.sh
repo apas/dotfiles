@@ -2,6 +2,10 @@ pdf() {
   convert -flatten ${1}[0] - 2>/dev/null | imgcat
 }
 
+peek() {
+    tmux split-window -p 40 $EDITOR $@ || exit;
+}
+
 mergepdf() {
     if [[ $# -eq 0 ]]; then
         echo "Merge PDFs."
