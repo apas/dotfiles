@@ -1,8 +1,13 @@
 " Enable all Pathogen plugins
 execute pathogen#infect()
+let iterm_profile = $ITERM_PROFILE
 
 syntax off                      " Enable syntax highlighting
-set background=light            " Set solarized background color
+if iterm_profile == "Dark"
+    set background=dark
+else
+    set background=light        " Set solarized background color
+endif
 colorscheme solarized           " Set solarized colorscheme
 set encoding=utf8               " Set UTF-8 encoding
 set autoread                    " Reload files changed outside vim
