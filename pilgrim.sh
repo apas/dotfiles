@@ -86,7 +86,7 @@ directories() {
         ln -sfn ${source}/remote ${dest}/.remote
     fi
 
-    sed -i.bak s/ulysses/${host}/ ${source}/shell/utils.sh
+    sed -i.bak s/winston/${host}/ ${source}/shell/utils.sh
     rm ${source}/shell/*.bak
 }
 
