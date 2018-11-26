@@ -236,6 +236,11 @@ wiktionary() {
   open "http://de.wiktionary.org/wiki/"${word_lookup}
 }
 
+twitter() {
+    word_lookup=${1}
+    open "https://twitter.com/search?q=from%3Aapas%20"${word_lookup}
+}
+
 wolfram() {
   query=${@}
   open "https://www.wolframalpha.com/input/?i=""${query}"
