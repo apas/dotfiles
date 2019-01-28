@@ -44,6 +44,14 @@ set directory=$HOME/.vim/swp//  " Write swap files in one directory, unique nms
 set splitright                  " Splitting will put the new window right
 set splitbelow                  " Splitting will put the new window below
 
+" Customise git gutter settings
+set updatetime=100
+let g:gitgutter_sign_added = '┃'
+let g:gitgutter_sign_modified = '┃'
+let g:gitgutter_sign_removed = '━'
+let g:gitgutter_sign_removed_first_line = '━'
+let g:gitgutter_sign_modified_removed = '┳'
+
 " Set search results to white font, red background overriding solarized
 autocmd ColorScheme * hi Search cterm=NONE ctermfg=white ctermbg=red
 
