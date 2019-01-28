@@ -59,6 +59,14 @@ dotfiles() {
     gitconfig="${gitconfig}\tdiff = ${dest}/.bin/diff-highlight | less"
     echo -e "${gitconfig}" >> ${dest}/.gitconfig
 
+    isgit=$(which git)
+    if [[ -z ${isgit} ]]; then
+        git update-index \
+            --assume-unchanged ${dest}/.gitconfig
+        git update-index \
+            --assume-unchanged ${source}/iterm/com.googlecode.iterm2.plist
+    fi
+
     if [[ "$(uname -s)" == "Darwin" ]]; then
         ln -sf ${source}/boom/boom ${dest}/.boom
         ln -sf ${source}/xvimrc ${dest}/.xvimrc
