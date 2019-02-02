@@ -131,12 +131,15 @@ loc() {
 }
 
 batt() {
-    remaining=`pmset -g batt | awk 'FNR==2 {print $5}'`
-    pct=`ioreg -c AppleSmartBattery -r | \
-        awk '$1~/Capacity/{c[$1]=$3} END{OFMT="%.2f%"; max=c["\"MaxCapacity\""];
-        if (max>0) { print 100*c["\"CurrentCapacity\""]/max;} }'`
+    if [[ "$(uname -s)" == "Darwin" ]]; then
+        remaining=`pmset -g batt | awk 'FNR==2 {print $5}'`
+        pct=`ioreg -c AppleSmartBattery -r | \
+            awk '$1~/Capacity/{c[$1]=$3} END{OFMT="%.2f%";
+            max=c["\"MaxCapacity\""]; if (max>0) { print
+            100*c["\"CurrentCapacity\""]/max;} }'`
 
-    echo "Remaining: ${remaining} hrs, ${pct}%"
+        echo "Remaining: ${remaining} hrs, ${pct}%"
+    fi
 }
 
 vupd() {
@@ -230,10 +233,19 @@ copy() {
   /bin/cat $1 | pbcopy
 }
 
-# to do flag switch btwn de, en, el
-wiktionary() {
-  word_lookup=${1}
-  open "http://de.wiktionary.org/wiki/"${word_lookup}
+wi() {
+    word_lookup=${2}
+
+    if [[ ${1} == "-d" ]]; then
+        open "http://de.wiktionary.org/wiki/"${word_lookup}
+    elif [[ ${1} == "-e" ]]; then
+        open "http://en.wiktionary.org/wiki/"${word_lookup}
+    elif [[ ${1} == "-g" ]]; then
+        open "http://el.wiktionary.org/wiki/"${word_lookup}
+    else
+        echo "Wiktionary wrapper"
+        echo "Use: wi [-d | -e | -g] WORD"
+    fi
 }
 
 twitter() {
