@@ -3,7 +3,7 @@
 # Markdown to PDF
 # 
 # My Markdown to PDF publishing workflow gathered in one file. Requires
-# a Pandoc version < 2.0, the following filters:
+# a Pandoc version > 2.0, the following filters:
 #
 #       i)      pandoc-crossref
 #       ii)     pandoc-citeproc
