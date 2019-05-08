@@ -37,6 +37,7 @@ alias csail="ssh csail"
 alias partners="ssh partners"
 alias clio="ssh clio"
 alias afovia="ssh afovia"
+alias pleiades="ssh pleiades"
 
 if [[ "$(uname -s)" == "Linux" ]]; then
     alias grep="grep --color=auto"
