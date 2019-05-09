@@ -12,8 +12,12 @@ alias slack="node $HOME/git/terminal-slack/main.js"
 alias gifs="boom gifs"
 alias bu="brew update; brew upgrade; brew cleanup -s"
 alias h="history | grep ${1}"
-alias sdr="cp -t $HOME/dropbox ${*}"
-alias ppull="scp pleiades:/home/apas/dropbox/* /root/dropbox/"
+if [[ "$(uname -s)" == "Linux" ]]; then
+    alias sdr="cp -t $HOME/dropbox ${*}"
+    alias ppull="scp pleiades:/home/apas/dropbox/* /root/dropbox/"
+elif [[ "$(uname -s)" == "Darwin" ]]; then
+    alias ppull="scp pleiades:/home/apas/dropbox/* ."
+fi
 
 alias archey='archey -c'
 alias server="python -m SimpleHTTPServer"
