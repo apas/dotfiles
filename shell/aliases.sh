@@ -12,6 +12,8 @@ alias slack="node $HOME/git/terminal-slack/main.js"
 alias gifs="boom gifs"
 alias bu="brew update; brew upgrade; brew cleanup -s"
 alias h="history | grep ${1}"
+alias sdr="cp -t $HOME/dropbox ${*}"
+alias ppull="scp pleiades:/home/apas/dropbox/* /root/dropbox/"
 
 alias archey='archey -c'
 alias server="python -m SimpleHTTPServer"
