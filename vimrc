@@ -2,7 +2,7 @@
 execute pathogen#infect()
 let iterm_profile = $ITERM_PROFILE
 
-syntax off                      " Enable syntax highlighting
+syntax on                      " Enable syntax highlighting
 if iterm_profile == "Dark"
     set background=dark
 else
@@ -45,7 +45,7 @@ set splitright                  " Splitting will put the new window right
 set splitbelow                  " Splitting will put the new window below
 
 " Customise git gutter settings
-set updatetime=100
+set updatetime=10
 let g:gitgutter_sign_added = '┃'
 let g:gitgutter_sign_modified = '┃'
 let g:gitgutter_sign_removed = '━'
