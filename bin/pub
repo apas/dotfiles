@@ -68,7 +68,7 @@ if [[ ${1} == "--doc" || ${1} == "-d" ]]; then
         filename=${3}
         output=${filename%.md}
 
-        pandoc ${filename} --pdf-engine=/Library/TeX/texbin/xelatex \
+        pandoc ${filename} --pdf-engine=xelatex \
             --template=/Users/apas/.pandoc/templates/default.latex \
             -H /Users/apas/.pandoc/templates/fonts.tex \
             -F pandoc-crossref \
@@ -82,7 +82,7 @@ if [[ ${1} == "--doc" || ${1} == "-d" ]]; then
         filename=${3}
         output=${filename%.md}
 
-        pandoc ${filename} --pdf-engine=/Library/TeX/texbin/pdflatex \
+        pandoc ${filename} --pdf-engine=pdflatex \
             --template=/Users/apas/.pandoc/templates/default.latex \
             -F pandoc-crossref \
             -F pandoc-citeproc \
@@ -99,7 +99,7 @@ if [[ ${1} == "--doc" || ${1} == "-d" ]]; then
         filename=${2}
         output=${filename%.md}
 
-        pandoc ${filename} --pdf-engine=/Library/TeX/texbin/pdflatex \
+        pandoc ${filename} --pdf-engine=pdflatex \
             --template=/Users/apas/.pandoc/templates/default.latex \
             -F pandoc-crossref \
             -F pandoc-citeproc \
@@ -115,7 +115,7 @@ elif [[ ${1} == "--tufte" || ${1} == "-t" ]]; then
         output=${filename%.md}
 
         pandoc ${filename} --template=/Users/apas/.pandoc/templates/tufte.latex \
-            --pdf-engine=/Library/TeX/texbin/xelatex \
+            --pdf-engine=xelatex \
             -H /Users/apas/.pandoc/templates/fonts.tex \
             -F pandoc-crossref \
             -F pandoc-citeproc \
@@ -128,7 +128,7 @@ elif [[ ${1} == "--tufte" || ${1} == "-t" ]]; then
         filename=${2}
         output=${filename%.md}
 
-        pandoc ${filename} --pdf-engine=/Library/TeX/texbin/pdflatex \
+        pandoc ${filename} --pdf-engine=pdflatex \
             --template=/Users/apas/.pandoc/templates/tufte.latex \
             -F pandoc-crossref \
             -F pandoc-citeproc \
@@ -144,7 +144,7 @@ elif [[ ${1} == "--letter" || ${1} == "-l" ]]; then
         output=${filename%.md}
 
         pandoc ${filename} --template=/Users/apas/.pandoc/templates/letter.latex \
-            --pdf-engine=/Library/TeX/texbin/xelatex \
+            --pdf-engine=xelatex \
             -H /Users/apas/.pandoc/templates/fonts.tex \
             -f markdown+raw_tex+yaml_metadata_block \
             --variable urlcolor=blue \
@@ -154,7 +154,7 @@ elif [[ ${1} == "--letter" || ${1} == "-l" ]]; then
         output=${filename%.md}
 
         pandoc ${filename} --template=/Users/apas/.pandoc/templates/letter.latex \
-            --pdf-engine=/Library/TeX/texbin/pdflatex \
+            --pdf-engine=pdflatex \
             -f markdown+raw_tex+yaml_metadata_block \
             --variable urlcolor=blue \
             -t latex --highlight-style pygments -o ${output}.pdf        
@@ -173,8 +173,10 @@ elif [[ ${1} == "--slides" || ${1} == "-s" ]]; then
         -o ${output}.pdf
 fi
 
-open -g -a Preview ${output}.pdf && \
-    echo "tell application \"Preview\" to activate" | osascript - && \
-    open -a iTerm
+if [[ "$(uname -s)" == "Darwin" ]]; then
+    open -g -a Preview ${output}.pdf && \
+        echo "tell application \"Preview\" to activate" | osascript - && \
+        open -a iTerm
+fi
 
 exit
