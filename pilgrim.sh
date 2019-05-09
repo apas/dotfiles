@@ -80,6 +80,7 @@ directories() {
     ln -sfn ${source}/pip ${dest}/.pip
     ln -sfn ${source}/shell ${dest}/.shell
     ln -sfn ${source}/vim ${dest}/.vim
+    ln -sfn ${source}/pandoc ${dest}/.pandoc
 
     mkdir -p ${dest}/.vim/{undodir,swp}
     chmod go-rwx ${dest}/.vim/{undodir,swp}

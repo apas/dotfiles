@@ -69,8 +69,8 @@ if [[ ${1} == "--doc" || ${1} == "-d" ]]; then
         output=${filename%.md}
 
         pandoc ${filename} --pdf-engine=xelatex \
-            --template=/Users/apas/.pandoc/templates/default.latex \
-            -H /Users/apas/.pandoc/templates/fonts.tex \
+            --template=$HOME/.pandoc/templates/default.latex \
+            -H $HOME/.pandoc/templates/fonts.tex \
             -F pandoc-crossref \
             -F pandoc-citeproc \
             -f markdown+raw_tex+yaml_metadata_block \
@@ -83,7 +83,7 @@ if [[ ${1} == "--doc" || ${1} == "-d" ]]; then
         output=${filename%.md}
 
         pandoc ${filename} --pdf-engine=pdflatex \
-            --template=/Users/apas/.pandoc/templates/default.latex \
+            --template=$HOME/.pandoc/templates/default.latex \
             -F pandoc-crossref \
             -F pandoc-citeproc \
             -f markdown+raw_tex+yaml_metadata_block \
@@ -100,7 +100,7 @@ if [[ ${1} == "--doc" || ${1} == "-d" ]]; then
         output=${filename%.md}
 
         pandoc ${filename} --pdf-engine=pdflatex \
-            --template=/Users/apas/.pandoc/templates/default.latex \
+            --template=$HOME/.pandoc/templates/default.latex \
             -F pandoc-crossref \
             -F pandoc-citeproc \
             -f markdown+raw_tex+yaml_metadata_block \
@@ -114,9 +114,9 @@ elif [[ ${1} == "--tufte" || ${1} == "-t" ]]; then
         filename=${3}
         output=${filename%.md}
 
-        pandoc ${filename} --template=/Users/apas/.pandoc/templates/tufte.latex \
+        pandoc ${filename} --template=$HOME/.pandoc/templates/tufte.latex \
             --pdf-engine=xelatex \
-            -H /Users/apas/.pandoc/templates/fonts.tex \
+            -H $HOME/.pandoc/templates/fonts.tex \
             -F pandoc-crossref \
             -F pandoc-citeproc \
             -f markdown+raw_tex+yaml_metadata_block \
@@ -129,7 +129,7 @@ elif [[ ${1} == "--tufte" || ${1} == "-t" ]]; then
         output=${filename%.md}
 
         pandoc ${filename} --pdf-engine=pdflatex \
-            --template=/Users/apas/.pandoc/templates/tufte.latex \
+            --template=$HOME/.pandoc/templates/tufte.latex \
             -F pandoc-crossref \
             -F pandoc-citeproc \
             -f markdown+raw_tex+yaml_metadata_block \
@@ -143,9 +143,9 @@ elif [[ ${1} == "--letter" || ${1} == "-l" ]]; then
         filename=${3}
         output=${filename%.md}
 
-        pandoc ${filename} --template=/Users/apas/.pandoc/templates/letter.latex \
+        pandoc ${filename} --template=$HOME/.pandoc/templates/letter.latex \
             --pdf-engine=xelatex \
-            -H /Users/apas/.pandoc/templates/fonts.tex \
+            -H $HOME/.pandoc/templates/fonts.tex \
             -f markdown+raw_tex+yaml_metadata_block \
             --variable urlcolor=blue \
             -t latex --highlight-style pygments -o ${output}.pdf
@@ -153,7 +153,7 @@ elif [[ ${1} == "--letter" || ${1} == "-l" ]]; then
         filename=${2}
         output=${filename%.md}
 
-        pandoc ${filename} --template=/Users/apas/.pandoc/templates/letter.latex \
+        pandoc ${filename} --template=$HOME/.pandoc/templates/letter.latex \
             --pdf-engine=pdflatex \
             -f markdown+raw_tex+yaml_metadata_block \
             --variable urlcolor=blue \
