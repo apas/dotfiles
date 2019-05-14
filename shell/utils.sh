@@ -34,7 +34,7 @@ else
 fi
 
 if [[ "$(uname -s)" == "Linux" ]]; then
-    export PATH=$HOME/.remote:$PATH
+    export PATH=$HOME/.remote:/home/linuxbrew/.linuxbrew/bin:$HOME/.cabal/bin:$PATH
 fi
 
 export PATH=$HOME/.bin:$PATH:$HOME/.go/bin:$HOME/.cargo/bin
