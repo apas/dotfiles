@@ -62,7 +62,7 @@ dotfiles() {
     isgit=$(which git)
     if [[ -z ${isgit} ]]; then
         git update-index \
-            --assume-unchanged ${dest}/.gitconfig
+            --assume-unchanged ${source}/git/gitconfig
         git update-index \
             --assume-unchanged ${source}/iterm/com.googlecode.iterm2.plist
     fi
