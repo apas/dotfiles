@@ -42,6 +42,7 @@ bookman
 booktabs
 bpolynomial
 breqn
+businesscard-qrcode
 caption
 carlisle
 changepage
@@ -58,10 +59,13 @@ collection-latex
 collection-latexrecommended
 collection-metapost
 collection-xetex
+colorprofiles
 colortbl
 courier
+cqubeamer
 crop
 ctable
+dehyph
 drv
 dviincl
 dvipdfmx
@@ -95,12 +99,14 @@ feynmp-auto
 filehook
 fix2col
 fixlatvian
+fiziko
 float
 font-change-xetex
 fontbook
 fontspec
 fontwrap
 footmisc
+footnotehyper
 fp
 fpl
 framed
@@ -192,6 +198,7 @@ metalogo
 metaobj
 metaplot
 metapost
+metapost-colorbrewer
 metapost.x86_64-darwin
 metauml
 mflogo
@@ -238,6 +245,7 @@ pspicture
 ptext
 pxfonts
 quran
+quran-de
 rcs
 realscripts
 repere
@@ -269,6 +277,7 @@ synctex
 synctex.x86_64-darwin
 tetex
 tetex.x86_64-darwin
+tetragonos
 tex
 tex-gyre
 tex-gyre-math
@@ -293,6 +302,8 @@ times
 tipa
 titlesec
 titling
+tlshell
+tlshell.x86_64-darwin
 tools
 translator
 tufte-latex
