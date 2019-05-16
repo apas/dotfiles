@@ -86,10 +86,6 @@ directories() {
 
     mkdir -p ${dest}/.tmux_tmp
 
-    if [[ "$(uname -s)" == "Darwin" ]]; then
-        ln -sfn ${source}/pandoc ${dest}/.pandoc
-    fi
-
     if [[ "$(uname -s)" == "Linux" ]]; then
         ln -sfn ${source}/remote ${dest}/.remote
     fi
