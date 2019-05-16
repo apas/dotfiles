@@ -30,10 +30,6 @@ alias chrome="open -a 'Google Chrome' $1"
 alias j="jump"
 alias v="vim"
 alias s="subl"
-# alias cat="ccat -G String=green -G Comment=faint -G Decimal=darkyellow \
-#   -G Keyword=purple -G Tag=yellow -G Plaintext=white -G Type=darkred \
-#   -G Punctuation=white -G Literal=white -G HTMLTag=yellow \
-#   ${1}"
 
 alias broad="ssh broad"
 alias hms="ssh hms"
