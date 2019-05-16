@@ -5,23 +5,30 @@ host=${2}
 source=$(pwd)
 
 install_brew() {
-    if [[ "$(uname -s)" == "Darwin" ]]; then
-        echo "== Brew"
+    echo "== Brew"
+    isbrew=$(which brew)
 
-        isbrew=$(which brew)
-
-        if [[ -z ${isbrew} ]]; then
-            echo "Brew not installed. Installing brew. . ."
+    if [[ -z ${isbrew} ]]; then
+        echo "Brew not installed. Installing brew. . ."
+        if [[ "$(uname -s)" == "Darwin" ]]; then
             /usr/bin/ruby -e "$(curl -fsSL \
             https://raw.githubusercontent.com/Homebrew/install/master/install)"
+        elif [[ "$(uname -s)" == "Linux" ]]; then
+            sh -c "$(curl -fsSL \
+            https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"
         fi
-
-        echo "Brew installed. Installing Brewfile. . ."
-        brew bundle install --file=${source}/Brewfile
-
-        echo "Changing shell to brew's bash. . ."
-        chsh -s $(brew --prefix)/bin/bash
     fi
+
+    echo "Brew installed. Installing Brewfile. . ."
+    if [[ "$(uname -s)" == "Darwin" ]]; then
+        brew bundle install --file=${source}/Brewfile-darwin
+    elif [[ "$(uname -s)" == "Linux" ]]; then
+        brew bundle install --file=${source}/Brewfile-linux
+    fi
+
+    echo "Changing shell to brew's bash. . ."
+    echo "$(brew --prefix)/bin/bash" | sudo tee -a /etc/shells > /dev/null
+    chsh -s $(brew --prefix)/bin/bash
 }
 
 macos() {
