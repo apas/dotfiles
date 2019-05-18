@@ -54,9 +54,6 @@ export HISTTIMEFORMAT="%F %T "
 export HISTCONTROL=ignoredups:erasedups
 export PROMPT_COMMAND="history -a${PROMPT_COMMAND:+; $PROMPT_COMMAND}"
 
-tk1=token1
-tk2=token2
-export SLACK_TOKEN=$tk1$tk2
 export PYTHONDONTWRITEBYTECODE=1
 
 # color modifications for brew grc
@@ -68,9 +65,4 @@ if [[ "$(uname -s)" == "Darwin" ]]; then
 fi
 
 # point to and source z in order to track and build dir list
-# assumes z installed via brew and current ver is 1.9
-if [[ "$(uname -s)" == "Darwin" ]]; then
-    . /usr/local/Cellar/z/1.9/etc/profile.d/z.sh
-elif [[ "$(uname -s)" == "Linux" ]]; then
-    . $HOME/.remote/z.sh
-fi
+. $HOME/.bin/z.sh
