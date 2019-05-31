@@ -52,7 +52,7 @@ export HISTFILESIZE=100000
 export HISTSIZE=100000
 export HISTTIMEFORMAT="%F %T "
 export HISTCONTROL=ignoredups:erasedups
-export PROMPT_COMMAND="history -a${PROMPT_COMMAND:+; $PROMPT_COMMAND}"
+export PROMPT_COMMAND="history -a"
 
 export PYTHONDONTWRITEBYTECODE=1
 
