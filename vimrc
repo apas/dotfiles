@@ -74,6 +74,12 @@ nnoremap <leader>q :q!<cr>
 nnoremap <leader>z :wq<cr>
 nnoremap <leader>w :w<cr>
 
+" <Space> to enter command mode.
+" (It's not worth letting <Space> be PgDn, because PgUp doesn't work, because
+" the terminal passes <S-Space> as <Space>)
+nnoremap <Space> :
+vnoremap <Space> :
+
 " Color highlight line numbers
 highlight LineNr ctermfg=NONE
 " Color highlight current cursor line number
