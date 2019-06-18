@@ -60,6 +60,7 @@ cask "caffeine"
 cask "coconutbattery"
 cask "dropbox"
 cask "firefox"
+cask "forklift"
 cask "google-chrome"
 cask "iina"
 cask "imageoptim"
@@ -87,7 +88,6 @@ mas "Dark Reader for Safari", id: 1438243180
 mas "Drafts", id: 1435957248
 mas "Encrypto", id: 935235287
 mas "Evernote", id: 406056744
-mas "ForkLift", id: 412448059
 mas "iMovie", id: 408981434
 mas "Keynote", id: 409183694
 mas "Magnet", id: 441258766
