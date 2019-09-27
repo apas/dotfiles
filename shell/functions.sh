@@ -71,6 +71,12 @@ t() {
                 tmux new -s ${2}
             fi
         fi
+    elif [[ ${1} == "-am" ]]; then # when on remote box from a mac
+        if tmux has-session -t ${2} > /dev/null 2>&1; then
+            tmux -CC attach -t ${2}
+        else
+            tmux -CC new -s ${2}
+        fi
     elif [[ ${1} == "-l" ]]; then
         tmux ls
     elif [[ ${1} == "-k" ]]; then
