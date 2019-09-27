@@ -52,12 +52,24 @@ ds() {
 
 t() {
     if [[ $# -eq 0 ]]; then
-        tmux -CC
+        if [[ "$(uname -s)" == "Darwin" ]]; then
+            tmux -CC
+        else
+            tmux
+        fi
     elif [[ ${1} == "-a" ]]; then
         if tmux has-session -t ${2} > /dev/null 2>&1; then
-            tmux -CC attach -t ${2}
+            if [[ "$(uname -s)" == "Darwin" ]]; then
+                tmux -CC attach -t ${2}
+            else
+                tmux attach -t ${2}
+            fi
         else
-            tmux -CC new -s ${2}
+            if [[ "$(uname -s)" == "Darwin" ]]; then
+                tmux -CC new -s ${2}
+            else
+                tmux new -s ${2}
+            fi
         fi
     elif [[ ${1} == "-l" ]]; then
         tmux ls
@@ -68,7 +80,7 @@ t() {
             tmux rename-session -t ${2} ${3}
         fi
     else
-        echo "iTerm tmux integration wrapper"
+        echo "tmux wrapper (plain tmux and iTerm integration)"
         echo "Use: t [-a | -l | -k | -r NAME NAME_NEW]"
         echo " "
         echo -e "Options:\n\t-a:\tattach to or create session"
