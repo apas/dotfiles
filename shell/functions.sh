@@ -6,6 +6,16 @@ peek() {
     tmux split-window -p 40 $EDITOR $@ || exit;
 }
 
+dark() {
+    osascript -e '
+        tell application "System Events"
+            tell appearance preferences
+                set dark mode to not dark mode
+            end tell
+        end tell
+    '
+}
+
 mergepdf() {
     if [[ $# -eq 0 ]]; then
         echo "Merge PDFs."
