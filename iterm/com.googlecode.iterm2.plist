@@ -1096,7 +1096,7 @@
 	<key>DimBackgroundWindows</key>
 	<false/>
 	<key>DimInactiveSplitPanes</key>
-	<false/>
+	<true/>
 	<key>DimOnlyText</key>
 	<false/>
 	<key>DisableFullscreenTransparency</key>
@@ -1314,13 +1314,13 @@
 	<key>NSWindow Frame SUAutomaticUpdateAlert</key>
 	<string>412 538 616 174 0 0 1440 877 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>330 299 620 392 0 0 1280 777 </string>
+	<string>410 363 620 392 0 0 1440 877 </string>
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>333 167 606 469 0 0 1440 877 </string>
 	<key>NSWindow Frame SharedPreferences</key>
 	<string>962 440 796 486 0 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>493 37 710 451 0 0 1280 777 </string>
+	<string>513 152 710 451 0 0 1440 877 </string>
 	<key>NeverWarnAboutShortLivedSessions_7F81A283-52DD-49AC-8C97-AC50DF3EA8EF</key>
 	<true/>
 	<key>NeverWarnAboutShortLivedSessions_7F81A283-52DD-49AC-8C97-AC50DF3EA8EF_selection</key>
@@ -2994,12 +2994,13 @@
 	</array>
 	<key>NoSyncAllAppVersions</key>
 	<array>
-		<string>3.3.2</string>
-		<string>3.2.9</string>
-		<string>3.3.4</string>
-		<string>3.3.0</string>
-		<string>3.3.3</string>
 		<string>3.3.6</string>
+		<string>3.3.4</string>
+		<string>3.3.3</string>
+		<string>3.3.7</string>
+		<string>3.3.0</string>
+		<string>3.2.9</string>
+		<string>3.3.2</string>
 	</array>
 	<key>NoSyncAutoBurialReveal</key>
 	<true/>
@@ -3013,9 +3014,9 @@
 	<key>NoSyncFrame_SharedPreferences</key>
 	<dict>
 		<key>screenFrame</key>
-		<string>{{0, 0}, {1280, 800}}</string>
+		<string>{{0, 0}, {1440, 900}}</string>
 		<key>topLeft</key>
-		<string>{190, 746}</string>
+		<string>{203, 669}</string>
 	</dict>
 	<key>NoSyncHaveRequestedFullDiskAccess</key>
 	<true/>
@@ -3026,7 +3027,7 @@
 	<key>NoSyncInstallationId</key>
 	<string>4D845DE8-E5B9-423B-86AB-95B4EAE1E178</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>23</integer>
+	<integer>34</integer>
 	<key>NoSyncNextAnnoyanceTime</key>
 	<real>586806537.24966598</real>
 	<key>NoSyncOnboardingWindowHasBeenShown</key>
@@ -3795,7 +3796,7 @@
 	<key>SUAutomaticallyUpdate</key>
 	<true/>
 	<key>SUEnableAutomaticChecks</key>
-	<true/>
+	<false/>
 	<key>SUFeedAlternateAppNameKey</key>
 	<string>iTerm</string>
 	<key>SUFeedURL</key>
@@ -3803,7 +3804,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2019-10-26T13:06:34Z</date>
+	<date>2019-11-18T11:35:06Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SUUpdateRelaunchingMarker</key>
@@ -3829,7 +3830,7 @@
 	<key>SoundForEsc</key>
 	<false/>
 	<key>SplitPaneDimmingAmount</key>
-	<real>0.14640403368794327</real>
+	<real>0.13397883421985818</real>
 	<key>StatusBarPosition</key>
 	<integer>0</integer>
 	<key>StretchTabsToFillBar</key>
@@ -3899,7 +3900,7 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.3.6</string>
+	<string>3.3.7</string>
 	<key>metalMaximizeThroughput</key>
 	<false/>
 </dict>
