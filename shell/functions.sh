@@ -125,6 +125,19 @@ encrypt() {
     fi
 }
 
+getex() {
+    # return exclusive lines to FILE
+    if [[ ${1} == "-1" ]]; then
+        comm -23 <(sort -u ${2}) <(sort -u ${3})
+    elif [[ ${1} == "-2" ]]; then
+        comm -13 <(sort -u ${2}) <(sort -u ${3})
+    else
+        echo -e "Return lines exclusive to file.\n"
+        echo -e "Use:\n\tgetex [FLAG] FILE1 FILE2"
+        echo -e "Flags:\n\t-1, -2:\t\treturn lines exclusive to FILE1 or FILE2"
+    fi
+}
+
 jump() {
   dirpath=`pwd`
   input=$1
