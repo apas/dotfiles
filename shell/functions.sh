@@ -6,6 +6,16 @@ peek() {
     tmux split-window -p 40 $EDITOR $@ || exit;
 }
 
+dark() {
+    osascript -e '
+        tell application "System Events"
+            tell appearance preferences
+                set dark mode to not dark mode
+            end tell
+        end tell
+    '
+}
+
 mergepdf() {
     if [[ $# -eq 0 ]]; then
         echo "Merge PDFs."
@@ -476,9 +486,13 @@ m3u8() {
 
 gifify() {
   if [[ $# -eq 1 ]]; then
-    ffmpeg -i ${1} -filter_complex "fps=10" out.gif
+    ffmpeg -i ${1} -vf \
+        "fps=10,scale=-1:-1:flags=lanczos,split[s0][s1];[s0]palettegen[p];[s1][p]paletteuse" \
+        out.gif
   elif [[ $# -eq 3 ]]; then
-    ffmpeg -i ${3} -filter_complex "fps=10,scale=-1:${2}" out.gif
+    ffmpeg -i ${3} -vf \
+        "fps=10,scale=${2}:-1:flags=lanczos,split[s0][s1];[s0]palettegen[p];[s1][p]paletteuse" \
+        out.gif
   else
     echo "proper usage: gifify [-r size-in-pix] <input_movie.mov>"
     echo -e "-r\t\tresizes gif to given pixel size keeping aspect ratio"

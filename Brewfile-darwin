@@ -6,17 +6,20 @@ tap "homebrew/core"
 tap "homebrew/science"
 tap "homebrew/services"
 tap "jez/formulae"
+tap "thoughtbot/formulae"
 brew "archey"
+brew "gcc"
+brew "autoconf"
+brew "automake"
 brew "awk"
 brew "bash"
-brew "boost"
 brew "python"
 brew "ccat"
 brew "cloc"
 brew "cmake"
-brew "ffmpeg"
-brew "gcc"
+brew "coreutils"
 brew "ghostscript"
+brew "ffmpeg"
 brew "gifsicle"
 brew "gist"
 brew "git"
@@ -28,21 +31,26 @@ brew "htop"
 brew "imagemagick"
 brew "jp2a"
 brew "jq"
+brew "libksba"
 brew "make"
 brew "mas"
+brew "mysql"
 brew "qpdf"
 brew "ocrmypdf"
+brew "octave"
 brew "pandoc"
 brew "pandoc-citeproc"
 brew "pandoc-crossref"
 brew "potrace"
+brew "python@2"
 brew "q"
 brew "r"
 brew "ruby"
+brew "spotbugs"
 brew "thefuck"
 brew "tig"
 brew "tmux"
-brew "transmission", restart_service: true
+brew "transmission-cli"
 brew "tree"
 brew "unrar"
 brew "vim"
@@ -52,15 +60,11 @@ brew "youtube-dl"
 brew "z"
 brew "heroku/brew/heroku"
 brew "jez/formulae/pandoc-sidenote"
-cask "aerial"
 cask "apptrap"
 cask "basictex"
 cask "beamer"
-cask "bowtie"
-cask "intelliscape-caffeine"
 cask "coconutbattery"
 cask "dropbox"
-cask "firefox"
 cask "forklift"
 cask "google-chrome"
 cask "iina"
@@ -68,12 +72,15 @@ cask "imageoptim"
 cask "intellij-idea"
 cask "iterm2"
 cask "java"
+cask "keepingyouawake"
 cask "keybase"
+cask "obs"
 cask "paste"
+cask "plex"
 cask "plex-media-server"
+cask "protonvpn"
 cask "quicklook-json"
 cask "real-vnc"
-cask "sequel-pro"
 cask "shifty"
 cask "signal"
 cask "skype"
@@ -81,23 +88,27 @@ cask "sublime-text"
 cask "tableplus"
 cask "transmission"
 cask "vanilla"
-cask "visual-studio-code"
-mas "1Password", id: 443987910
+cask "virtualbox"
+cask "vlc"
+mas "1Password 7", id: 1333542190
 mas "Agenda", id: 1287445660
 mas "bookmarker for pinboard", id: 1451400394
 mas "Dark Reader for Safari", id: 1438243180
 mas "Drafts", id: 1435957248
 mas "Encrypto", id: 935235287
 mas "Evernote", id: 406056744
+mas "Evernote Web Clipper", id: 1481669779
 mas "iMovie", id: 408981434
+mas "Instapaper", id: 1481302432
 mas "Keynote", id: 409183694
 mas "Magnet", id: 441258766
-mas "Mathpix Snipping Tool", id: 1349670778
 mas "Microsoft Excel", id: 462058435
+mas "Microsoft Outlook", id: 985367838
 mas "Microsoft PowerPoint", id: 462062816
 mas "Microsoft Word", id: 462054704
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
+mas "Pixelmator Pro", id: 1289583905
 mas "Reeder", id: 880001334
 mas "Slack", id: 803453959
 mas "Telegram", id: 747648890
@@ -105,5 +116,7 @@ mas "Things", id: 904280696
 mas "ToothFairy", id: 1191449274
 mas "Tweetbot", id: 557168941
 mas "TweetDeck", id: 485812721
+mas "Twitter", id: 1482454543
+mas "WhatsApp", id: 1147396723
 mas "Wipr", id: 1320666476
 mas "Xcode", id: 497799835
