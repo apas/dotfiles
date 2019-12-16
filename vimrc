@@ -64,6 +64,7 @@ autocmd ColorScheme * hi Search cterm=NONE ctermfg=white ctermbg=red
 
 " Set Make tabs to tabs and not spaces
 filetype on
+filetype plugin on
 autocmd FileType make set noexpandtab shiftwidth=4
 
 " Close open buffer without closing window split
