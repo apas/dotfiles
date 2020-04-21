@@ -91,6 +91,8 @@ t() {
         tmux ls
     elif [[ ${1} == "-k" ]]; then
         tmux kill-session -t ${2}
+    elif [[ ${1} == "-d" ]]; then
+        tmux detach
     elif [[ $# -eq 3 ]]; then
         if [[ ${1} == "-r" ]]; then
             tmux rename-session -t ${2} ${3}

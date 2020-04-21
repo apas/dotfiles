@@ -13,6 +13,7 @@ alias gifs="boom gifs"
 alias bu="brew update; brew upgrade; brew cleanup -s"
 alias h="history | grep ${1}"
 alias texpackages="tlmgr info --list --only-installed --data name"
+alias d="tmux detach"
 
 if [[ "$(uname -s)" == "Linux" ]]; then
     alias sdr="cp -t $HOME/dropbox ${*}"
