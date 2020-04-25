@@ -13,12 +13,12 @@ brew "autoconf"
 brew "automake"
 brew "awk"
 brew "bash"
-brew "python"
 brew "ccat"
 brew "cloc"
 brew "cmake"
 brew "coreutils"
 brew "ghostscript"
+brew "python"
 brew "ffmpeg"
 brew "gifsicle"
 brew "gist"
@@ -74,7 +74,9 @@ cask "iterm2"
 cask "java"
 cask "keepingyouawake"
 cask "keybase"
+cask "mattermost"
 cask "obs"
+cask "omnidisksweeper"
 cask "paste"
 cask "plex"
 cask "plex-media-server"
@@ -88,20 +90,23 @@ cask "sublime-text"
 cask "tableplus"
 cask "transmission"
 cask "vanilla"
-cask "virtualbox"
 cask "vlc"
 mas "1Password 7", id: 1333542190
 mas "Agenda", id: 1287445660
 mas "bookmarker for pinboard", id: 1451400394
 mas "Dark Reader for Safari", id: 1438243180
+mas "Day One", id: 1055511498
 mas "Drafts", id: 1435957248
+mas "Dynamo", id: 1445910651
 mas "Encrypto", id: 935235287
 mas "Evernote", id: 406056744
 mas "Evernote Web Clipper", id: 1481669779
+mas "GoodNotes", id: 1444383602
 mas "iMovie", id: 408981434
 mas "Instapaper", id: 1481302432
 mas "Keynote", id: 409183694
 mas "Magnet", id: 441258766
+mas "Messenger", id: 1480068668
 mas "Microsoft Excel", id: 462058435
 mas "Microsoft Outlook", id: 985367838
 mas "Microsoft PowerPoint", id: 462062816
@@ -111,6 +116,7 @@ mas "Pages", id: 409201541
 mas "Pixelmator Pro", id: 1289583905
 mas "Reeder", id: 880001334
 mas "Slack", id: 803453959
+mas "Spark", id: 1176895641
 mas "Telegram", id: 747648890
 mas "Things", id: 904280696
 mas "ToothFairy", id: 1191449274
