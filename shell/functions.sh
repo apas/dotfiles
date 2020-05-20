@@ -99,9 +99,10 @@ t() {
         fi
     else
         echo "tmux wrapper (plain tmux and iTerm integration)"
-        echo "Use: t [-a | -l | -k | -r NAME NAME_NEW]"
+        echo "Use: t [-a [NAME] | -d | -l | -k NAME | -r NAME_OLD NAME_NEW]"
         echo " "
         echo -e "Options:\n\t-a:\tattach to or create session"
+        echo -e "\t-d:\tdetach current tmux session"
         echo -e "\t-l:\tlist tmux sessions"
         echo -e "\t-k:\tkill tmux session"
         echo -e "\t-r:\trename tmux session"
