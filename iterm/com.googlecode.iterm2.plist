@@ -3781,6 +3781,8 @@
 	<string>/Users/apas/Dropbox/git/dotfiles/iterm</string>
 	<key>PreserveWindowSizeWhenTabBarVisibilityChanges</key>
 	<true/>
+    <key>PreventEscapeSequenceFromChangingProfile</key>
+    <false/>
 	<key>Print In Black And White</key>
 	<true/>
 	<key>PromptOnClose</key>
