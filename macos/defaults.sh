@@ -135,3 +135,6 @@ defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
 # Enable full keyboard access for all controls
 # (e.g. enable Tab in modal dialogs)
 defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
+
+# ctrl-cmd: click and drag a window from any location
+defaults write -g NSWindowShouldDragOnGesture YES
