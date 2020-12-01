@@ -52,12 +52,10 @@ let g:gitgutter_sign_removed = '━'
 let g:gitgutter_sign_removed_first_line = '━'
 let g:gitgutter_sign_modified_removed = '┳'
 
-if system("uname -s") == "Linux\n"
-    " Proper highlight colors
-    highlight GitGutterAdd ctermfg=2
-    highlight GitGutterChange ctermfg=3
-    highlight GitGutterDelete ctermfg=1
-endif
+highlight! link SignColumn NoText
+highlight GitGutterAdd ctermfg=2
+highlight GitGutterChange ctermfg=3
+highlight GitGutterDelete ctermfg=1
 
 " Set search results to white font, red background overriding solarized
 autocmd ColorScheme * hi Search cterm=NONE ctermfg=white ctermbg=red
