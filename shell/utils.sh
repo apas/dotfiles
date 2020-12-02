@@ -41,6 +41,7 @@ export PATH=$HOME/.bin:$PATH:$HOME/.go/bin:$HOME/.cargo/bin
 export GOPATH=$HOME/.go
 export EDITOR='vim'
 export TMUX_TMPDIR=$HOME/.tmux_tmp
+export BASH_SILENCE_DEPRECATION_WARNING=1
 
 shopt -s no_empty_cmd_completion
 shopt -s extglob
