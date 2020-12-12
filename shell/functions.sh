@@ -16,6 +16,24 @@ dark() {
     '
 }
 
+airdrop() {
+    abs_file_path=""
+    case "${@}" in
+        *\ * )
+                renamed_file=$(sp2u "${@}" | awk '{print $4}')
+                abs_file_path=$(find "$PWD" -type f | grep "${renamed_file}" \
+                    | sed 's/ /\\ /g')
+                ;;
+            *)
+                abs_file_path=$(find "$PWD" -type f | grep "${@}")
+                ;;
+    esac
+
+    terminal-share -service airdrop \
+        -video \
+        "${abs_file_path}"
+}
+
 mergepdf() {
     if [[ $# -eq 0 ]]; then
         echo "Merge PDFs."
