@@ -37,7 +37,7 @@ if [[ "$(uname -s)" == "Linux" ]]; then
     export PATH=$HOME/.remote:/home/linuxbrew/.linuxbrew/bin:$HOME/.cabal/bin:$PATH
 fi
 
-export PATH=$HOME/.bin:$PATH:$HOME/.go/bin:$HOME/.cargo/bin
+export PATH=$HOME/.bin:/opt/homebrew/bin:$PATH:$HOME/.go/bin:$HOME/.cargo/bin
 export GOPATH=$HOME/.go
 export EDITOR='vim'
 export TMUX_TMPDIR=$HOME/.tmux_tmp
