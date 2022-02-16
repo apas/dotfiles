@@ -64,8 +64,11 @@ if len(sys.argv) > 1:
             input_hour, input_min, tzinfo=zoneinfo.ZoneInfo(key=tz_dict[input_tz_from]))
 
         as_tz = input_time_object.astimezone(pytz.timezone(tz_dict[input_tz_to]))
+        as_tz_h = as_tz.strftime("%H")
+        as_tz_m = as_tz.strftime("%M")
+        as_tz_p = as_tz.strftime("%p")
 
-        res = as_tz.strftime("%H") + ":" + as_tz.strftime("%M") + " " + as_tz.strftime("%p") + " " + input_tz_to.upper()
+        res = f"{as_tz_h}:{as_tz_m} {as_tz_p} {input_tz_to.upper()}"
 
         print_prompt(res, res, True)
     else:
@@ -74,15 +77,15 @@ if len(sys.argv) > 1:
 
 print(json.dumps({
     "view": {
-      "type": "form",
-      "title": "Timezone Query",
-      "submitLabel": "Run",
-      "fields": [
-        {
-          "type": "text",
-          "id": "query",
-          "label": "Your Query",
-        },
-      ],
+        "type": "form",
+        "title": "Timezone Query",
+        "submitLabel": "Run",
+        "fields": [
+            {
+                "type": "text",
+                "id": "query",
+                "label": "Your Query",
+            },
+        ],
     },
-  }))
+}))
