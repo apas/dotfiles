@@ -22,8 +22,8 @@ def print_prompt(title, value, exit):
                 {
                     "title": title,
                     "action": {
-                    "type": "copy",
-                    "value": value
+                        "type": "copy",
+                        "value": value
                     }
                 }
             ]
@@ -56,15 +56,15 @@ if len(sys.argv) > 1:
         input_min = input_time_dissect.tm_min
 
         today = datetime.date.today()
-        day = today.strftime("%d")
-        month = today.strftime("%m")
-        year = today.strftime("%Y")
+        day = int(today.strftime("%d"))
+        month = int(today.strftime("%m"))
+        year = int(today.strftime("%Y"))
 
-        input_time_object = datetime.datetime(int(year), int(month), int(day),
+        input_time_object = datetime.datetime(year, month, day,
             input_hour, input_min, tzinfo=zoneinfo.ZoneInfo(key=tz_dict[input_tz_from]))
 
         as_tz = input_time_object.astimezone(pytz.timezone(tz_dict[input_tz_to]))
-        as_tz_h = as_tz.strftime("%H")
+        as_tz_h = as_tz.strftime("%I")
         as_tz_m = as_tz.strftime("%M")
         as_tz_p = as_tz.strftime("%p")
 
