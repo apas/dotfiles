@@ -44,7 +44,11 @@ set directory=$HOME/.vim/swp//  " Write swap files in one directory, unique nms
 set splitright                  " Splitting will put the new window right
 set splitbelow                  " Splitting will put the new window below
 
-" Customise git gutter settings
+" Customize airline statusbar
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#formatter = 'unique_tail'
+
+" Customize git gutter settings
 set updatetime=10
 let g:gitgutter_sign_added = '┃'
 let g:gitgutter_sign_modified = '┃'
@@ -103,18 +107,18 @@ nnoremap <C-l> :nohl<CR><C-L>
 command Pdf execute "w | silent !pub -d % &" | silent redraw!
 command Tufte execute "w | silent !pub -t % &" | silent redraw!
 
-" Custom status line mode dictionary
-let g:cmode={
-  \ 'n' : 'NORMAL',
-  \ 'v' : 'VISUAL',
-  \ 'V' : 'VISUAL',
-  \ 'i' : 'INSERT'
-  \ }
+" " Custom status line mode dictionary
+" let g:cmode={
+"   \ 'n' : 'NORMAL',
+"   \ 'v' : 'VISUAL',
+"   \ 'V' : 'VISUAL',
+"   \ 'i' : 'INSERT',
+"   \ }
 
-" Custom status line - current mode buffer path modified column lines
-set statusline=%1*
-set statusline+=%{(g:cmode[mode()])}
-set statusline+=\ \[%n]
-set statusline+=\ %<%F\ %m
-set statusline+=%=
-set statusline+=%c%10(%l/%L%)%10(%p%%\%)
+" " Custom status line - current mode buffer path modified column lines
+" set statusline=%1*
+" set statusline+=%{(g:cmode[mode()])}
+" set statusline+=\ \[%n]
+" set statusline+=\ %<%F\ %m
+" set statusline+=%=
+" set statusline+=%c%10(%l/%L%)%10(%p%%\%)
