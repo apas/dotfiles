@@ -1,0 +1,15 @@
+{
+	"ignored_packages":
+	[
+		"Vintage",
+	],
+	"theme": "Default.sublime-theme",
+	"light_color_scheme": "Packages/Solarized Color Scheme/Solarized (light).sublime-color-scheme",
+	"dark_color_scheme": "Packages/Solarized Color Scheme/Solarized (dark).sublime-color-scheme",
+	"color_scheme": "auto",
+	"font_face": "Roboto Mono",
+	"font_size": 16,
+	"translate_tabs_to_spaces": true,
+	"wrap_width": 90,
+	"line_padding_top": 1,
+}

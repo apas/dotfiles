@@ -1,0 +1,14 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"GitGutter",
+		"Package Control",
+		"Pretty JSON",
+		"Solarized Color Scheme",
+		"Theme - Solarized Space",
+	],
+}
