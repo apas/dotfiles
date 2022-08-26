@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
 
 url=${1}
-domain=${url#*//}
-domain=$(echo ${domain} | tr / -)
+domain=$(echo ${url#*//} | tr / -)
 ts=$(date +"%Y-%m-%d-%H-%M-%S")
 wd=/Users/apas/Dropbox/Archive
 
@@ -16,6 +15,7 @@ wget -k \
     –user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.146 Safari/537.36." \
     -e robots=off \
     -P ${wd} \
+    -q \
     ${url}
 
 ls -rt ${wd} \
