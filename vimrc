@@ -34,6 +34,8 @@ set noshowcmd                   " Don't show incomplete cmds [bc Lightline]
 set laststatus=2                " Always show status bar
 set autoindent                  " Use existing indent depth starting a new line
 set smartindent                 " Do smart indenting when starting a new line
+set breakindent                 " Keep at least the same indentation as previous line
+set breakindentopt=shift:4      " Offset wrapped line by an additional 4 characters
 set ttimeoutlen=1               " Exit insert/visual mode without ESC delay
 set digraph                     " Support special characters, eg German umlaut
 set undodir=$HOME/.vim/undodir  " Set persistent undodir path
