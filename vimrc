@@ -45,6 +45,7 @@ set undoreload=10000            " Max # of lines to save for undo on buf reload
 set directory=$HOME/.vim/swp//  " Write swap files in one directory, unique nms
 set splitright                  " Splitting will put the new window right
 set splitbelow                  " Splitting will put the new window below
+set eol                         " Save empty line at end of file
 
 " Customize airline statusbar
 let g:airline#extensions#tabline#enabled = 1
