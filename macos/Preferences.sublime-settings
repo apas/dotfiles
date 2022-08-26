@@ -11,5 +11,6 @@
 	"font_size": 16,
 	"translate_tabs_to_spaces": true,
 	"wrap_width": 90,
+	"word_wrap": true,
 	"line_padding_top": 1,
 }
