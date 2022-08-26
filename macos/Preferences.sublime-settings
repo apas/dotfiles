@@ -13,4 +13,5 @@
 	"wrap_width": 90,
 	"word_wrap": true,
 	"line_padding_top": 1,
+	"ensure_newline_at_eof_on_save": true
 }
