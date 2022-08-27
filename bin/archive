@@ -3,7 +3,45 @@
 url=${1}
 domain=$(echo ${url#*//} | tr / -)
 ts=$(date +"%Y-%m-%d-%H-%M-%S")
+tstz=$(date +"%Y-%m-%d %H:%M:%S %Z")
 wd=/Users/apas/Dropbox/Archive
+
+read -r -d '' html << EOM
+<div id="HEADER" style="font-family:sans-serif;background-color:#FFFAE1;
+    border-bottom:2px #B40010 solid;min-width:1028px">
+  <div style="padding-top:10px">
+  </div>
+  <table style="width:1028px;font-size:10px" border="0" cellspacing="0" cellpadding="0">
+    <tbody>
+      <tr>
+        <td style="width:250px;text-align:center;vertical-align:top" rowspan="2">
+            <div style="font-size:24px">My URL Archive</div>
+            <div style="font-size:12px">unix-based webpage capture</div><br />
+          </a>
+        </td>
+        <td style="text-align:right;padding:3px 3px 0 3px;white-space:nowrap;
+        vertical-align:top; font-size:14px;font-weight:bold">
+          Saved from URL:
+        </td>
+        <td style="text-align:left;padding:4px 5px 2px 5px;font-size:14px;
+        white-space:nowrap;vertical-align:top" rowspan="1">
+          <a href="${url}">${url}</a>
+        </td>
+      </tr>
+      <tr>
+        <td style="text-align:right;padding:3px 3px 0 3px;white-space:nowrap;
+        vertical-align:top;font-size:14px;font-weight:bold">
+          Time of capture:
+        </td>
+        <td style="text-align:left;padding:4px 5px 2px 5px;font-size:14px;
+        white-space:nowrap;vertical-align:top" rowspan="1">
+          <time>${tstz}</time>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+EOM
 
 if [[ "${url}" == *"https://twitter.com"*  ]]; then
     url="$(echo ${url/twitter.com/nitter.it})"
@@ -21,3 +59,7 @@ wget -k \
 ls -rt ${wd} \
     | tail -n 1 \
     | xargs -I '{}' mv ${wd}/'{}' ${wd}/${ts}-${domain}.html
+
+printf '%s\n%s\n' \
+    "${html}" \
+    "$(cat ${wd}/${ts}-${domain}.html)" >${wd}/${ts}-${domain}.html
