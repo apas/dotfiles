@@ -29,6 +29,10 @@ defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool false
 defaults write com.apple.Safari ShowFavoritesBar -bool false
 
 # Set up Safari for development.
+defaults write $app IncludeDevelopMenu -bool YES # Show the Develop menu
+defaults write $app WebKitDeveloperExtrasEnabledPreferenceKey -bool YES # Show the Develop menu
+defaults write $app WebKitPreferences.developerExtrasEnabled -bool YES # Show the Develop menu
+defaults write $app IncludeDevelopMenu -bool YES # Show the Develop menu
 defaults write com.apple.Safari IncludeInternalDebugMenu -bool true
 defaults write com.apple.Safari IncludeDevelopMenu -bool true
 defaults write com.apple.Safari WebKitDeveloperExtrasEnabledPreferenceKey -bool true
@@ -84,10 +88,12 @@ defaults write com.apple.dock mru-spaces -bool false
 defaults write com.apple.Safari ShowFullURLInSmartSearchField -bool true
 
 # Set Safari’s home page to `about:blank` for faster loading
-defaults write com.apple.Safari HomePage -string "about:blank"
+# defaults write com.apple.Safari HomePage -string "about:blank"
 
 # Prevent Safari from opening ‘safe’ files automatically after downloading
 defaults write com.apple.Safari AutoOpenSafeDownloads -bool false
+
+defaults write com.apple.Safari ShowOverlayStatusBar -bool YES # Show the status bar
 
 # Enable continuous spellchecking
 defaults write com.apple.Safari WebContinuousSpellCheckingEnabled -bool true
@@ -138,3 +144,7 @@ defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
 
 # ctrl-cmd: click and drag a window from any location
 defaults write -g NSWindowShouldDragOnGesture YES
+
+defaults write com.apple.dock show-recents -bool NO # Disable recent apps
+defaults write -g AppleICUForce24HourTime -bool YES # Use 24-hour time
+
