@@ -10,13 +10,7 @@ install_brew() {
 
     if [[ -z ${isbrew} ]]; then
         echo "Brew not installed. Installing brew. . ."
-        if [[ "$(uname -s)" == "Darwin" ]]; then
-            /usr/bin/ruby -e "$(curl -fsSL \
-            https://raw.githubusercontent.com/Homebrew/install/master/install)"
-        elif [[ "$(uname -s)" == "Linux" ]]; then
-            sh -c "$(curl -fsSL \
-            https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"
-        fi
+        /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
     fi
 
     echo "Brew installed. Installing Brewfile. . ."
