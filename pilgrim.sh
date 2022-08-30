@@ -67,7 +67,7 @@ dotfiles() {
     echo -e "${gitconfig}" >> ${dest}/.gitconfig
 
     isgit=$(which git)
-    if [[ -z ${isgit} ]]; then
+    if [[ -n ${isgit} ]]; then
         git update-index \
             --assume-unchanged ${source}/git/gitconfig
         git update-index \
