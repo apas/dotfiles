@@ -108,7 +108,9 @@ vim_plugins() {
         "https://github.com/tpope/vim-commentary.git" \
         "https://github.com/altercation/vim-colors-solarized.git" \
         "https://github.com/airblade/vim-gitgutter.git" \
-        "https://github.com/tpope/vim-unimpaired.git")
+        "https://github.com/tpope/vim-unimpaired.git" \
+        "https://github.com/vim-airline/vim-airline.git" \
+        "https://github.com/vim-airline/vim-airline-themes.git")
 
     mkdir -p ${source}/vim/bundle
 
