@@ -89,10 +89,10 @@ directories() {
 
     if [[ "$(uname -s)" == "Linux" ]]; then
         ln -sfn ${source}/remote ${dest}/.remote
+        sed -i.bak s/winston/${host}/ ${source}/shell/utils.sh
+        rm ${source}/shell/*.bak
     fi
 
-    sed -i.bak s/winston/${host}/ ${source}/shell/utils.sh
-    rm ${source}/shell/*.bak
 }
 
 vim_plugins() {
