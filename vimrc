@@ -37,7 +37,6 @@ set smartindent                 " Do smart indenting when starting a new line
 set breakindent                 " Keep at least the same indentation as previous line
 set breakindentopt=shift:4      " Offset wrapped line by an additional 4 characters
 set ttimeoutlen=1               " Exit insert/visual mode without ESC delay
-set digraph                     " Support special characters, eg German umlaut
 set undodir=$HOME/.vim/undodir  " Set persistent undodir path
 set undofile                    " Write changes to the undofile
 set undolevels=1000             " Max # of changes that can be undone
@@ -94,10 +93,11 @@ highlight CursorLineNr ctermfg=brown
 " Map yanking in visual mode to system's copy
 vnoremap <C-c> "*y
 
-" Map toggle automatic line comment (a la ST3)
-nnoremap <C-/> gcc
+" Map toggle comment line or selection
+nmap <C-m> gc$
+vmap <C-m> gc
 
-" Map insert line above current line and exit insert mode (a la ST3)
+" Map insert line above current line and exit insert mode (like ST3)
 nnoremap <S-o> O<ESC>
 
 " Clear previous search highlights
@@ -109,19 +109,3 @@ nnoremap <C-l> :nohl<CR><C-L>
 " No need for `Ctrl-z` and `fg` any more
 command Pdf execute "w | silent !pub -d % &" | silent redraw!
 command Tufte execute "w | silent !pub -t % &" | silent redraw!
-
-" " Custom status line mode dictionary
-" let g:cmode={
-"   \ 'n' : 'NORMAL',
-"   \ 'v' : 'VISUAL',
-"   \ 'V' : 'VISUAL',
-"   \ 'i' : 'INSERT',
-"   \ }
-
-" " Custom status line - current mode buffer path modified column lines
-" set statusline=%1*
-" set statusline+=%{(g:cmode[mode()])}
-" set statusline+=\ \[%n]
-" set statusline+=\ %<%F\ %m
-" set statusline+=%=
-" set statusline+=%c%10(%l/%L%)%10(%p%%\%)
