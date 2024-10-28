@@ -1,14 +1,15 @@
 " Enable all Pathogen plugins
 execute pathogen#infect()
-let iterm_profile = $ITERM_PROFILE
+let iterm_profile = system('defaults read -g AppleInterfaceStyle')
 
 syntax on                      " Enable syntax highlighting
-if iterm_profile == "Dark"
+if iterm_profile =~ 'Dark'
     set background=dark
 else
     set background=light        " Set solarized background color
 endif
 colorscheme solarized           " Set solarized colorscheme
+set cursorline
 set encoding=utf8               " Set UTF-8 encoding
 set autoread                    " Reload files changed outside vim
 set nocompatible                " Use vim rather than vi settings

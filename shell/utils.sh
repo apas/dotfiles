@@ -1,25 +1,3 @@
-if [[ "$(uname -s)" == "Darwin" ]]; then
-    sith() {
-        val=$(defaults read -g AppleInterfaceStyle 2>/dev/null)
-        val_ret=$?
-        if [[ $val == "Dark" ]]; then
-            i
-        fi
-    }
-
-    i() {
-        if [[ $ITERM_PROFILE == "Terminal" ]]; then
-            echo -ne "\033]50;SetProfile=Dark\a"
-            export ITERM_PROFILE="Dark"
-        else
-            echo -ne "\033]50;SetProfile=Terminal\a"
-            export ITERM_PROFILE="Terminal"
-        fi
-    }
-
-    sith
-fi
-
 red="$(tput setaf 1 2>/dev/null || echo '\e[0;31m')"
 grn="$(tput setaf 2 2>/dev/null || echo '\e[0;32m')"
 blu="$(tput setaf 4 2>/dev/null || echo '\e[0;34m')"
@@ -27,7 +5,7 @@ cyn="$(tput setaf 6 2>/dev/null || echo '\e[0;36m')"
 rst="$(tput sgr 0 2>/dev/null || echo '\e[0m')"
 
 if [[ "$(uname -s)" == "Darwin" ]]; then
-    export PS1="\[$blu\]\w\[$cyn\]\[$rst\] "
+    export PS1="\[$cyn\]λ \[$blu\]\w\[$blu\]\[$rst\] "
 else
     m="\[$grn\][winston]\[$grn\]\[$rst\]"
     export PS1="$m \[$blu\]\w\[$cyn\]\[$rst\] "

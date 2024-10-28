@@ -6,3 +6,5 @@ set completion-prefix-display-length 3
 "\e[A": history-search-backward
 "\e[B": history-search-forward
 "\e[Z": menu-complete
+"\e\e[D": backward-word
+"\e\e[C": forward-word
