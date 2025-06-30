@@ -16,6 +16,7 @@ install_brew() {
     echo "Brew installed. Installing Brewfile. . ."
     if [[ "$(uname -s)" == "Darwin" ]]; then
         brew bundle install --file=${source}/Brewfile-darwin
+        ln -sf ${source}/iterm/ghostty-config ${HOME}/Library/Application\ Support/com.mitchellh.ghostty/config
     elif [[ "$(uname -s)" == "Linux" ]]; then
         brew bundle install --file=${source}/Brewfile-linux
     fi
