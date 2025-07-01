@@ -52,8 +52,8 @@ fi
 alias ppath="echo $PATH | tr ':' '\n'"
 alias hogs="ps wwaxr -o pid,stat,%cpu,time,name,comm | head -10"
 alias gist='gist -R -Ppc -f ${1}'
-alias llt="ls -lthUr"
-alias llat="ls -althUr"
+alias llt="ls -lthUro"
+alias llat="ls -althUro"
 alias fuck='$(thefuck $(fc -ln -1))'
 alias ping='grc -es --colour=auto ping'
 alias traceroute='grc -es --colour=auto traceroute'

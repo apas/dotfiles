@@ -336,7 +336,7 @@ ll() {
   elif [[ ${current_dir} == ${papers_dir} || ${1} == ${papers_dir}'/' ]]; then
     llt ${1}
   else
-    ls -lh ${1}
+    ls -lho ${1}
   fi
 }
 
@@ -347,7 +347,7 @@ lla() {
   if [[ ${current_dir} == ${dls_dir} || ${1} == ${dls_dir}'/' ]]; then
       llat ${1}
   else
-    ls -alh ${1}
+    ls -alho ${1}
   fi
 }
 
