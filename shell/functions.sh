@@ -546,14 +546,15 @@ whereami() {
 u() {
     # reading from STDIN to skip shell tokenization issues
     if [[ $# -eq 0 ]]; then
+        local long_url result encoded_url
         echo -n "Paste URL: "
-        local long_url
         read -r long_url
+        encoded_url=$(printf '%s' "${long_url}" | jq -sRr @uri)
 
         # Call is.gd API with format=simple
-        local result=$(curl -fsSL "https://is.gd/create.php?format=simple&url=${long_url}")
+        result=$(curl -fsSL "https://is.gd/create.php?format=simple&url=${encoded_url}")
         echo ""
-        echo ${result} | pbcopy
+        echo "${result}" | pbcopy
         echo "Done! ${result} is in your clipboard!"
     else
         echo "u - short URL with is.gd"
