@@ -542,3 +542,21 @@ whereami() {
   echo -e "\n${RED}Current network location:$NC " ; scselect
   echo -e "\n${RED}Public facing IP Address:$NC " ; ip
 }
+
+u() {
+    # reading from STDIN to skip shell tokenization issues
+    if [[ $# -eq 0 ]]; then
+        echo -n "Paste URL: "
+        local long_url
+        read -r long_url
+
+        # Call is.gd API with format=simple
+        local result=$(curl -fsSL "https://is.gd/create.php?format=simple&url=${long_url}")
+        echo ""
+        echo ${result} | pbcopy
+        echo "Done! ${result} is in your clipboard!"
+    else
+        echo "u - short URL with is.gd"
+        echo "Usage: u"
+    fi
+}
